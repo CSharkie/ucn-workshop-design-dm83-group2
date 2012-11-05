@@ -25,10 +25,33 @@ public class AddressBook
         addressBook.add(newPerson);
     }
     
+    public void createPerson(int id, String name, String address, int postalCode, String city, String phone)
+    {
+        if(checkId(id)==false) {
+            System.out.println("ID already exist.");
+        }
+        else {
+        Person person = new Person(id, name, address, postalCode, city, phone);
+        addPerson(person);
+    }
+    }
+    
+    public boolean checkId(int id)
+    {
+     
+        for(Person person: addressBook)
+        {
+            if(person.getId() == id)
+            return false;
+        }
+        
+        return true;
+    }
+    
     public void removePerson(int id)
     {
-        Person p = getPerson(id);
-        addressBook.remove(p);
+        Person person = getPerson(id);
+        addressBook.remove(person);
     }
     
     public Person getPerson(int id)
@@ -63,6 +86,17 @@ public class AddressBook
         {
             person.print();
             System.out.println(" ");
+        }
+    }
+    
+    public void list(int id)
+    {
+        for(Person person : addressBook)
+        {
+            if(person.getId() == id)
+            {
+                person.print();
+            }
         }
     }
 

@@ -1,5 +1,5 @@
 package Model;
-
+import java.util.ArrayList;
 
 /**
  * Write a description of class DVD here.
@@ -14,13 +14,14 @@ public class DVD
     private String title;
     private String artist;
     private String publicationDate;
+    private ArrayList<Copy> copies;
 
     /**
      * Constructor for objects of class DVD
      */
     public DVD()
     {
-        
+        copies = new ArrayList<Copy>();
     }
     
     public void setId(int id)

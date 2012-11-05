@@ -11,6 +11,7 @@ public class AddressBook
 {
     private ArrayList<Person> addressBook;
     private Person person;
+    private static AddressBook instance;
     
     /**
      * Constructor for objects of class AddressBook
@@ -20,11 +21,29 @@ public class AddressBook
         addressBook = new ArrayList<Person>();
     }
     
+    /**
+     * Singleton
+     */
+    public static AddressBook getInstance()
+    {
+        if(instance == null)
+        {
+            instance = new AddressBook();
+        }
+        return instance;
+    }
+    
+    /**
+     * Adds a person created with the Person Class to the AddressBook
+     */
     public void addPerson(Person newPerson)
     {
         addressBook.add(newPerson);
     }
     
+    /**
+     * Creates a person and add's it to the AddressBook and checks if the id already exists.
+     */
     public void createPerson(int id, String name, String address, int postalCode, String city, String phone)
     {
         if(checkId(id)==false) {
@@ -36,6 +55,9 @@ public class AddressBook
     }
     }
     
+    /**
+     * Check for id duplication.
+     */
     public boolean checkId(int id)
     {
      
@@ -48,12 +70,32 @@ public class AddressBook
         return true;
     }
     
+    /**
+     * Remove a person by id.
+     */
     public void removePerson(int id)
     {
         Person person = getPerson(id);
         addressBook.remove(person);
     }
     
+    /**
+     * Updates a person based on id from the print method.
+     */
+    public void updatePerson(int searchId, int id, String name, String address, int postalCode, String city, String phone)
+    {
+        Person person = getPerson(searchId); // it's the current id
+        person.setId(id); // the new id
+        person.setName(name); // the new name
+        person.setAddress(address); // the new address
+        person.setPostalCode(postalCode); // the new postal code
+        person.setCity(city); // the new city
+        person.setPhone(phone); // the new phone
+    }
+    
+    /**
+     * Find a person by the id.
+     */
     public Person getPerson(int id)
     {
         int index = 0;
@@ -80,7 +122,10 @@ public class AddressBook
         }
     }
     
-    public void print()
+    /**
+     * List the entire address book with all the details.
+     */
+    public void list()
     {
         for(Person person : addressBook)
         {
@@ -89,7 +134,10 @@ public class AddressBook
         }
     }
     
-    public void list(int id)
+    /**
+     * Prints the details of a person by the id.
+     */
+    public void print(int id)
     {
         for(Person person : addressBook)
         {

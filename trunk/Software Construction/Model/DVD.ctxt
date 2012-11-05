@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DVD()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DVD\r\n
+comment1.params=id
+comment1.target=void\ setId(int)
+comment2.params=
+comment2.target=int\ getId()
+comment3.params=title
+comment3.target=void\ title(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getTitle()
+comment5.params=artist
+comment5.target=void\ setArtist(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getArtist()
+comment7.params=publicationDate
+comment7.target=void\ setPublicationDate(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ getPublicationDate()
+numComments=9

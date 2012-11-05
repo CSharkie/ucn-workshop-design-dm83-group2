@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=AddressBook()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ AddressBook\r\n
+comment1.params=newPerson
+comment1.target=void\ addPerson(Person)
+comment2.params=id
+comment2.target=void\ removePerson(int)
+comment3.params=id
+comment3.target=Person\ getPerson(int)
+comment4.params=
+comment4.target=void\ print()
+numComments=5

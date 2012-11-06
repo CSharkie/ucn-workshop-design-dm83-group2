@@ -15,13 +15,28 @@ public class DVD
     private String artist;
     private String publicationDate;
     private ArrayList<Copy> copies;
+    private static DVD instance;
 
     /**
      * Constructor for objects of class DVD
      */
-    public DVD()
+    public DVD(int id,String title,String artist,String publicationDate)
     {
+        this.id = id;
+        this.title = title;
+        this.artist = artist;
+        this.publicationDate = publicationDate;
         copies = new ArrayList<Copy>();
+    }
+    
+    public static DVD getInstance(int id,String title,String artist,String publicationDate)
+    {
+        
+        if(instance == null)
+        {
+            instance = new DVD(id,title,artist,publicationDate);
+        }
+        return instance;
     }
     
     public void setId(int id)

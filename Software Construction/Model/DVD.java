@@ -107,5 +107,17 @@ public class DVD
         addCopy(copy);
     }
     
+    public void printCopy(int id)
+    {
+        for(Copy copy: copies)
+        {
+            if(copy.getSerialNumber() == id)
+            {
+                copy.print();
+            }
+        }
+    }
+           
+    
     
 }

@@ -93,6 +93,36 @@ public class AddressBook
         person.setPhone(phone); // the new phone
     }
     
+    public void updatePersonName(int searchId, String name)
+    {
+        Person person = getPerson(searchId);
+        person.setName(name);
+    }
+    
+    public void updatePersonAddress(int searchId, String address)
+    {
+        Person person = getPerson(searchId);
+        person.setAddress(address);
+    }
+    
+    public void updatePersonPostalCode(int searchId, int postalCode)
+    {
+        Person person = getPerson(searchId);
+        person.setPostalCode(postalCode);
+    }
+    
+    public void updatePersonCity(int searchId, String city)
+    {
+        Person person = getPerson(searchId);
+        person.setCity(city);
+    }
+    
+    public void updatePersonPhone(int searchId, String phone)
+    {
+        Person person = getPerson(searchId);
+        person.setPhone(phone);
+    }
+    
     /**
      * Find a person by the id.
      */

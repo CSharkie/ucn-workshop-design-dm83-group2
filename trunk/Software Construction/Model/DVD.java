@@ -64,7 +64,48 @@ public class DVD
         return publicationDate;
     }
     
+    public void addCopy(Copy newCopy)
+    {
+        copies.add(newCopy);
+    }
+    
+    public void removeDVDcopy(int serialNumber)
+    {
+        Copy copy = getCopy(serialNumber);
+        copies.remove(copy);
+    }
+    
+    public Copy getCopy(int id)
+    {
+        int index = 0;
+        boolean found = false;
+        int index2 = 0;
         
+        while(!found && index < copies.size())
+        {
+            Copy copy = copies.get(index);
+            if(copy.getSerialNumber()==id){
+                found = true;
+                index2 = index;
+            }
+            index++;
+        }
+        if(found == true )
+        {
+            return copies.get(index2);
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    
+    public void createCopy(int serialNumber, String purchaseDate,double purchasePrice)
+    {
+        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice);
+        addCopy(copy);
+    }
     
     
 }

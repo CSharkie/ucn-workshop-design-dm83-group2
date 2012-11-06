@@ -9,19 +9,21 @@ package Model;
  */
 public class Copy
 {
-    private String serialNumber;
+    private int serialNumber;
     private String purchaseDate;
     private double purchasePrice;
 
     /**
      * Constructor for objects of class Copy
      */
-    public Copy()
+    public Copy(int serialNumber,String purchaseDate,double purchasePrice)
     {
-        
+        this.serialNumber = serialNumber;
+        this.purchaseDate = purchaseDate;
+        this.purchasePrice = purchasePrice;
     }
     
-    public void setSerialNumber(String serialNumber)
+    public void setSerialNumber(int serialNumber)
     {
         this.serialNumber = serialNumber;
     }
@@ -36,7 +38,7 @@ public class Copy
         this.purchasePrice = purchasePrice;
     }
     
-    public String getSerialNumber()
+    public int getSerialNumber()
     {
         return serialNumber;
     }

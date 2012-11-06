@@ -89,6 +89,6 @@ public class Loan
         this.person = person;
     }
     
-    
+   
     
 }

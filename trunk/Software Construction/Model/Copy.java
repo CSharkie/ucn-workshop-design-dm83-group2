@@ -9,6 +9,9 @@ package Model;
  */
 public class Copy
 {
+    private String serialNumber;
+    private String purchaseDate;
+    private double purchasePrice;
     private DVD dvd;
 
     /**

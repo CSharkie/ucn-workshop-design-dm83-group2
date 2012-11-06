@@ -1,5 +1,5 @@
 package Model;
-
+import java.util.ArrayList;
 /**
  * Write a description of class Person here.
  * 
@@ -14,6 +14,7 @@ public class Person
     private int postalCode;
     private String city;
     private String phone;
+    private static ArrayList<Copy> loanDVDs;
 
     /**
      * Constructor for objects of class Person
@@ -26,7 +27,9 @@ public class Person
         this.postalCode = postalCode;
         this.city = city;
         this.phone = phone;
+        loanDVDs = new ArrayList<Copy>();
     }
+    
     
     public int getId()
     {
@@ -97,5 +100,19 @@ public class Person
         System.out.println("City:        " + city);
         System.out.println("Phone:       " + phone);
     }
+    
+    public void printLoanDvds()
+    {
+        if(loanDVDs.size()>0)
+        {
+        for(Copy copy: loanDVDs)
+        {
+            copy.print();
+        }
+    }
+    else
+        System.out.println("No dvds have been loan");
+    }
+    
     
 }

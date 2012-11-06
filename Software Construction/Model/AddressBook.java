@@ -80,43 +80,44 @@ public class AddressBook
     }
     
     /**
-     * Updates a person based on id from the print method.
+     * Updates a person name by the search id
      */
-    public void updatePerson(int searchId, int id, String name, String address, int postalCode, String city, String phone)
-    {
-        Person person = getPerson(searchId); // it's the current id
-        person.setId(id); // the new id
-        person.setName(name); // the new name
-        person.setAddress(address); // the new address
-        person.setPostalCode(postalCode); // the new postal code
-        person.setCity(city); // the new city
-        person.setPhone(phone); // the new phone
-    }
-    
     public void updatePersonName(int searchId, String name)
     {
         Person person = getPerson(searchId);
         person.setName(name);
     }
     
+    /**
+     * Updates a person address by the search id
+     */
     public void updatePersonAddress(int searchId, String address)
     {
         Person person = getPerson(searchId);
         person.setAddress(address);
     }
     
+    /**
+     * Updates a person postal code by the search id
+     */
     public void updatePersonPostalCode(int searchId, int postalCode)
     {
         Person person = getPerson(searchId);
         person.setPostalCode(postalCode);
     }
     
+    /**
+     * Updates a person city by the search id
+     */
     public void updatePersonCity(int searchId, String city)
     {
         Person person = getPerson(searchId);
         person.setCity(city);
     }
     
+    /**
+     * Updates a person phone by teh search id
+     */
     public void updatePersonPhone(int searchId, String phone)
     {
         Person person = getPerson(searchId);

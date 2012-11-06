@@ -36,7 +36,7 @@ public class AddressBook
     /**
      * Adds a person created with the Person Class to the AddressBook
      */
-    public void addPerson(Person newPerson)
+    private void addPerson(Person newPerson)
     {
         addressBook.add(newPerson);
     }
@@ -78,7 +78,7 @@ public class AddressBook
         Person person = getPerson(id);
         addressBook.remove(person);
     }
-    
+
     /**
      * Updates a person name by the search id
      */

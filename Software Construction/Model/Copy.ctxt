@@ -2,4 +2,16 @@
 comment0.params=
 comment0.target=Copy()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Copy\r\n
-numComments=1
+comment1.params=serialNumber
+comment1.target=void\ setSerialNumber(java.lang.String)
+comment2.params=purchaseDate
+comment2.target=void\ setPurchaseDate(java.lang.String)
+comment3.params=purchasePrice
+comment3.target=void\ setPurchasePrice(double)
+comment4.params=
+comment4.target=java.lang.String\ getSerialNumber()
+comment5.params=
+comment5.target=java.lang.String\ getPurchaseDate()
+comment6.params=
+comment6.target=double\ getPurchasePrice()
+numComments=7

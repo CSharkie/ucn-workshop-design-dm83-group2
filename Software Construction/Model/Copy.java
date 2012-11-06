@@ -51,5 +51,12 @@ public class Copy
         return purchasePrice;
     }
     
+    public void print()
+    {
+        System.out.println("Serial number: " + serialNumber);
+        System.out.println("Purchase date: " + purchaseDate);
+        System.out.println("Purchase price: " + purchasePrice);
+        System.out.println(" ");
+    }
     
 }

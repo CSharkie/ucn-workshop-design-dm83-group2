@@ -28,24 +28,38 @@ public class MainMenu
         while (!exit)
         {
             int choise = writeMainMenu();
-            if(choise == 1)
+            switch(choise) {
+            case 1:
             {
                 startAddressBook();
+                exit = true;
+                break;
             }
-            else {
-                if(choise == 2) {
-                    startDvd();
-                }
-                else {
-                    if(choise == 3) {
-                        startRent();
-                    } else {
-                        writeEnd();
-                        exit = true;
-                    }
-                }
+            case 2:
+            {
+                startDvd();
+                exit = true;
+                break;
+            }
+            case 3:
+            {
+                startRent();
+                exit = true;
+                break;
+            }
+            case 4:
+            {
+                writeEnd();
+                exit = true;
+                break;
+            }
+            default: 
+            {
+                System.out.println(" Invalid selection, please try again! ");
+                break;
             }
         }
+    }
     }
     
     private static int writeMainMenu()

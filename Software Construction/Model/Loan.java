@@ -1,4 +1,5 @@
 package Model;
+import java.util.ArrayList;
 
 
 /**
@@ -15,7 +16,9 @@ public class Loan
     private String status;
     private Copy rentedCopy;
     private Person person;
-    private AddressBook addressBook;
+
+    private DVD dvdCopies;
+    private Copy copy;
     
 
     /**
@@ -86,20 +89,7 @@ public class Loan
         this.person = person;
     }
     
-    public void makeLoan(int id, int serialNumber)
-    {
-        if(addressBook.getPerson(id)==null)
-        {
-            System.out.println("error");
-        }
-        else
-        {
-            
-        Person p = addressBook.getPerson(id);
-        p.print();
-    }
-        
-    }
+
    
     
     

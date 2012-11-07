@@ -16,7 +16,7 @@ public class DVDcontroler
     /**
      * Constructor for objects of class PersonControler
      */
-    public DVDcontroler(int id,String title,String artist,String publicationDate)
+    public DVDcontroler()
     {
         
         dvdContainer = DVDcontainer.getInstance();

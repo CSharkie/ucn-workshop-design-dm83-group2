@@ -55,6 +55,7 @@ public class Copy
     
     public void print()
     {
+        System.out.println("********************************");
         System.out.println("Serial number: " + serialNumber);
         System.out.println("Purchase date: " + purchaseDate);
         System.out.println("Purchase price: " + purchasePrice);

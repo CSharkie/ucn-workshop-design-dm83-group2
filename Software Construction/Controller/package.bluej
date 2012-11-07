@@ -1,16 +1,16 @@
 #BlueJ package file
 package.editor.height=547
 package.editor.width=1248
-package.editor.x=-8
-package.editor.y=-8
+package.editor.x=32
+package.editor.y=32
 package.numDependencies=0
 package.numTargets=3
 package.showExtends=true
 package.showUses=true
-target1.editor.height=700
-target1.editor.width=900
-target1.editor.x=366
-target1.editor.y=20
+target1.editor.height=728
+target1.editor.width=683
+target1.editor.x=0
+target1.editor.y=0
 target1.height=50
 target1.name=DVDcontroler
 target1.naviview.expanded=false

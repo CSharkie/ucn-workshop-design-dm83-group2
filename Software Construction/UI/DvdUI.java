@@ -12,6 +12,7 @@ public class DvdUI
 {
  
     private static DVDcontroler dvdControler;
+    private static DvdUpdateUI dvdUpdateUI;
 
     /**
      * Constructor for objects of class DvdUI
@@ -41,11 +42,10 @@ public class DvdUI
                     createDVD();
                     System.out.println();
                     System.out.println(" (1) Return");
-                    System.out.println(" (Enter) Create a new DVD" );
+                    System.out.println(" (Enter) Create a new DVD." );
                     String var = keyboard.nextLine();
                           i=var;
                 }
-                
                 new DvdUI();
                 break;
             }
@@ -57,17 +57,87 @@ public class DvdUI
                         printDvdDetails();
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Print another dvd");
+                        System.out.println(" (Enter) Print another dvd.");
                         String var = keyboard.nextLine();
                             i=var;
                     }
+                    new DvdUI();
+                    break;
+                }
+                case 3: {
+                    String i="";
+                    while(!i.equals("1"))
+                    {
+                        Scanner keyboard = new Scanner(System.in);
+                        
+                        System.out.println();
+                        System.out.println(" (1) Return");
+                        System.out.println(" (Enter) Print the list again.");
+                        String var = keyboard.nextLine();
+                            i=var;
+                    }
+                    new DvdUI();
+                    break;
+                }
+                case 4: {
+                    String i="";
+                    while(!i.equals("1"))
+                    {
+                        Scanner keyboard = new Scanner(System.in);
+                        
+                        System.out.println();
+                        System.out.println(" (1) Return");
+                        System.out.println(" (Enter) Add another copy.");
+                        String var = keyboard.nextLine();
+                            i=var;
+                    }
+                    new DvdUI();
+                    break;
+                }
+                case 5: {
+                    String i="";
+                    while(!i.equals("1"))
+                    {
+                        Scanner keyboard = new Scanner(System.in);
+                        
+                        System.out.println();
+                        System.out.println(" (1) Return");
+                        System.out.println(" (Enter) Check again for copies.");
+                        String var = keyboard.nextLine();
+                            i=var;
+                    }
+                    new DvdUI();
+                    break;
+                }
+                case 6: {
+                    String i="";
+                    while(!i.equals("1"))
+                    {
+                        Scanner keyboard = new Scanner(System.in);
+                        
+                        System.out.println();
+                        System.out.println(" (1) Return");
+                        System.out.println(" (Enter) Remove another DvD.");
+                        String var = keyboard.nextLine();
+                            i=var;
+                    }
+                    new DvdUI();
+                    break;
+                }
+                case 7:
+                {
+                    startDvdUpdate();
+                    break;
                 }
                 case 8: {
                 MainMenu.mainMenuStart();
                 exit = true;
                 break;
             }
-                        
+                default: {
+                System.out.println(" Invalid selection, please try again! ");
+                break;
+            }        
     }
 }
 }
@@ -87,6 +157,12 @@ public class DvdUI
         System.out.print("\n \n Make your choice: ");
         int choise = keyboard.nextInt();
         return choise;
+    }
+    
+    private static void startDvdUpdate()
+    {
+        dvdUpdateUI = new DvdUpdateUI();
+        dvdUpdateUI.start();
     }
     
     private static void createDVD()
@@ -149,10 +225,9 @@ public class DvdUI
     
     public static void printDvdDetails()
     {
-        Scanner keyboard = new Scanner(System.in);
-       
         int id = inputDvdID();
         dvdControler.printDvd(id);
     }
+    
         
 }

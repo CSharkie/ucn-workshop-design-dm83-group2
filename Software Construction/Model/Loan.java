@@ -24,9 +24,14 @@ public class Loan
     /**
      * Constructor for objects of class Loan
      */
-    public Loan()
+    public Loan(int id, String date, String period, String status, Copy rentedCopy, Person person)
     {
-        
+        this.id = id;
+        this.date = date;
+        this.period = period;
+        this.status = status;
+        this.rentedCopy = rentedCopy;
+        this.person = person;
     }
     
     public int getId()
@@ -88,9 +93,5 @@ public class Loan
     {
         this.person = person;
     }
-    
-
-   
-    
     
 }

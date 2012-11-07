@@ -12,6 +12,7 @@ public class Copy
     private int serialNumber;
     private String purchaseDate;
     private double purchasePrice;
+    private DVD dvd;
 
     /**
      * Constructor for objects of class Copy
@@ -51,6 +52,11 @@ public class Copy
     public double getPurchasePrice()
     {
         return purchasePrice;
+    }
+    
+    public DVD getDvd()
+    {
+        return dvd;
     }
     
     public void print()

@@ -22,7 +22,7 @@ public class DVDcontainer
         dvdList = new ArrayList<DVD>();
     }
 
-        public static DVDcontainer getInstance()
+    public static DVDcontainer getInstance()
     {
         if(instance == null)
         {

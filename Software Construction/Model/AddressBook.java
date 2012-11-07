@@ -154,6 +154,35 @@ public class AddressBook
     }
     
     /**
+     * Find a person by the name
+     */
+    public Person getPersonName(String name)
+    {
+        int index = 0;
+        boolean found = false;
+        int index2 = 0;
+        
+        while (!found && index < addressBook.size())
+        {
+            Person person = addressBook.get(index);
+            if(person.getName().equals(name))
+            {
+                found = true;
+                index2 = index;
+            }
+            index++;
+        }
+        if(found == true)
+        {
+            return addressBook.get(index2);
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    /**
      * List the entire address book with all the details.
      */
     public void list()

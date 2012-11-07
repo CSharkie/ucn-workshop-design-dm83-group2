@@ -16,15 +16,18 @@ public class Loan
     private String status;
     private Copy rentedCopy;
     private Person person;
-
     private DVD dvdCopies;
     private Copy copy;
+    private ArrayList<Person> addressBook;
+    private ArrayList<DVD>dvdList;
+    private ArrayList<Copy>copies;
+    
     
 
     /**
      * Constructor for objects of class Loan
      */
-    public Loan(int id, String date, String period, String status, Copy rentedCopy, Person person)
+    public Loan()
     {
         this.id = id;
         this.date = date;
@@ -32,7 +35,12 @@ public class Loan
         this.status = status;
         this.rentedCopy = rentedCopy;
         this.person = person;
+        addressBook = new ArrayList<Person>();
+        dvdList = new ArrayList<DVD>();
+        copies = new ArrayList<Copy>();
     }
+    
+    
     
     public int getId()
     {
@@ -93,5 +101,90 @@ public class Loan
     {
         this.person = person;
     }
+    
+        private void addPerson(Person newPerson)
+    {
+        addressBook.add(newPerson);
+    }
+    
+    /**
+     * Creates a person and add's it to the AddressBook and checks if the id already exists.
+     */
+    public void createPerson(int id, String name, String address, int postalCode, String city, String phone)
+    {
+        if(checkId(id)==false) {
+            System.out.println("ID already exist.");
+        }
+        else {
+        Person person = new Person(id, name, address, postalCode, city, phone);
+        addPerson(person);
+    }
+    }
+    
+    /**
+     * Check for id duplication.
+     */
+    public boolean checkId(int id)
+    {
+     
+        for(Person person: addressBook)
+        {
+            if(person.getId() == id)
+            return false;
+        }
+        
+        return true;
+    }
+    
+    
+    
+        public void createDVD2(int id, String title, String artist, String publicationDate,int copies)
+    {
+        if(checkIdDVD(id)==false) {
+            System.out.println("ID already exist.");
+        }
+        else {
+        DVD dvd = new DVD(id, title,artist,publicationDate,copies);
+        addDvd(dvd);
+    }
+    }
+    
+    private void addDvd(DVD newDvd)
+    {
+        dvdList.add(newDvd);
+    }
+    
+    /**
+     * Check for id duplication.
+     */
+    public boolean checkIdDVD(int id)
+    {
+     
+        for(DVD dvd: dvdList)
+        {
+            if(dvd.getId() == id)
+            return false;
+        }
+        
+        return true;
+    }
+    
+        public void addCopy(Copy newCopy)
+    {
+        copies.add(newCopy);
+    }
+    
+       public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
+    {
+        if(checkIdDVD(id)==true)
+        {
+        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice);
+        addCopy(copy);
+    }
+    else 
+    { }
+    }
+    
+    
     
 }

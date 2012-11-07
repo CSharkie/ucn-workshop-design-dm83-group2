@@ -67,6 +67,10 @@ public class DVDcontroler
         dvdContainer.printDvdByTitle(title);
     }
     
+    public void printAllDvd()
+    {
+        dvdContainer.printAllDvds();
+    }
     
     
     

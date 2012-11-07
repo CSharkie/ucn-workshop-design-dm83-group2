@@ -42,6 +42,17 @@ public class DVDcontainer
     }
     }
     
+        public void createDVD2(int id, String title, String artist, String publicationDate,int period)
+    {
+        if(checkId(id)==false) {
+            System.out.println("ID already exist.");
+        }
+        else {
+        DVD dvd = new DVD(id, title,artist,publicationDate,period);
+        addDvd(dvd);
+    }
+    }
+    
     private void addDvd(DVD newDvd)
     {
         dvdList.add(newDvd);
@@ -183,5 +194,15 @@ public class DVDcontainer
             }
         }
     }
+    
+    public void printAllDvds()
+    {
+        for(DVD dvd: dvdList)
+        {
+            dvd.print();
+            System.out.println("*****************");
+        }
+    }
+            
     
 }

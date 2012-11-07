@@ -16,6 +16,7 @@ public class DVD
     private String publicationDate;
     private ArrayList<Copy> copies;
     private static DVD instance;
+    private int copiesNumber;
 
     /**
      * Constructor for objects of class DVD
@@ -28,6 +29,17 @@ public class DVD
         this.publicationDate = publicationDate;
         copies = new ArrayList<Copy>();
     }
+    
+    public DVD(int id,String title,String artist,String publicationDate,int copiesNumber)
+    {
+        this.id = id;
+        this.title = title;
+        this.artist = artist;
+        this.publicationDate = publicationDate;
+        this.copiesNumber = copiesNumber;
+    }
+    
+        
     
     public static DVD getInstance(int id,String title,String artist,String publicationDate)
     {

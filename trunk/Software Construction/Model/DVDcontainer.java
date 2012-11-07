@@ -173,7 +173,7 @@ public class DVDcontainer
         dvdList.remove(dvd);
     }
     
-        public void printDvdByTitle(String title)
+    public void printDvdByTitle(String title)
     {
         for(DVD dvd : dvdList)
         {

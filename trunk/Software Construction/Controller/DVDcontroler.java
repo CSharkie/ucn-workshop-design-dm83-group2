@@ -11,46 +11,63 @@ import Model.*;
 public class DVDcontroler
 {
     // instance variables - replace the example below with your own
-    private DVD dvd;
+    private DVDcontainer dvdContainer;
 
     /**
      * Constructor for objects of class PersonControler
      */
     public DVDcontroler(int id,String title,String artist,String publicationDate)
     {
-        dvd = DVD.getInstance(id,title,artist,publicationDate);
-    }
-
-    
-    public void createCopy(int serialNumber, String purchaseDate,double purchasePrice)
-    {
-        dvd.createCopy(serialNumber,purchaseDate,purchasePrice);
+        
+        dvdContainer = DVDcontainer.getInstance();
     }
     
-    public void removeDVDcopy(int serialNumber)
+    public void createDVD(int id, String title, String artist, String publicationDate)
     {
-        dvd.removeDVDcopy(serialNumber);
+        dvdContainer.createDVD(id, title, artist, publicationDate);
     }
     
-    public void setId(int id)
+    public void removeDVD(int id)
     {
-        dvd.setId(id);
+        dvdContainer.removeDVD(id);
     }
     
-    public void setArtist(String artist)
+    public void printDvd(int id)
     {
-        dvd.setArtist(artist);
+        dvdContainer.printDvd(id);
     }
     
-    public void setPublicationDate(String publicationDate)
+    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
     {
-        dvd.setPublicationDate(publicationDate);
+        dvdContainer.createCopy(id, serialNumber, purchaseDate, purchasePrice);
     }
     
-    public void printCopy(int id)
+    public void changeArtist(int id,String artist)
     {
-        dvd.printCopy(id);
+        dvdContainer.changeArtist(id,artist);
     }
+    
+    public void changeTitle(int id, String title)
+    {
+        dvdContainer.changeTitle( id, title);
+    }
+    
+    public void printCopy(int id, int serialNumber)
+    {
+        dvdContainer.printCopy( id, serialNumber);
+    }
+    
+    public void removeCopy(int id,int serialNumber)
+    {
+        dvdContainer.removeCopy(id,serialNumber);
+    }
+    
+    public void printDvdByTitle(String title)
+    {
+        dvdContainer.printDvdByTitle(title);
+    }
+    
+    
     
     
 }

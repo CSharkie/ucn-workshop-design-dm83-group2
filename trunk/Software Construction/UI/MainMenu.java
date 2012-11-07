@@ -69,8 +69,8 @@ public class MainMenu
 
     private static void startDvd()
     {
-        //dvdUI= new DvdUI();
-        //dvdUI.start();
+        dvdUI= new DvdUI();
+        dvdUI.start();
     }
     
     private static void startRent()

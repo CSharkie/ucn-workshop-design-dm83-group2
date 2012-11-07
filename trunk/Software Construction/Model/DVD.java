@@ -137,10 +137,12 @@ public class DVD
     
     public void print()
     {
+        System.out.println("*******************************");
         System.out.println("ID: " + id);
         System.out.println("Title: " + title);
         System.out.println("Artist: " + artist);
         System.out.println("Publication Date " + publicationDate);
+        System.out.println("*******************************");
     }
            
     

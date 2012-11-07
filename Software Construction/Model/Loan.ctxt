@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=id\ date\ period\ status\ rentedCopy\ person
-comment0.target=Loan(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ Copy,\ Person)
+comment0.params=
+comment0.target=Loan()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Loan\r\n
 comment1.params=
 comment1.target=int\ getId()
@@ -10,6 +10,8 @@ comment11.params=rentedCopy
 comment11.target=void\ setRentedCopy(Copy)
 comment12.params=person
 comment12.target=void\ setPerson(Person)
+comment13.params=id\ serialNumber
+comment13.target=void\ makeLoan(int,\ int)
 comment2.params=
 comment2.target=java.lang.String\ getDate()
 comment3.params=
@@ -26,4 +28,4 @@ comment8.params=date
 comment8.target=void\ setDate(java.lang.String)
 comment9.params=period
 comment9.target=void\ setPeriod(java.lang.String)
-numComments=13
+numComments=14

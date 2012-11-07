@@ -15,18 +15,15 @@ public class Loan
     private String status;
     private Copy rentedCopy;
     private Person person;
+    private AddressBook addressBook;
+    
 
     /**
      * Constructor for objects of class Loan
      */
-    public Loan(int id, String date, String period, String status, Copy rentedCopy, Person person)
+    public Loan()
     {
-        this.id = id;
-        this.date = date;
-        this.period = period;
-        this.status = status;
-        this.rentedCopy = rentedCopy;
-        this.person = person;
+        
     }
     
     public int getId()
@@ -89,6 +86,21 @@ public class Loan
         this.person = person;
     }
     
+    public void makeLoan(int id, int serialNumber)
+    {
+        if(addressBook.getPerson(id)==null)
+        {
+            System.out.println("error");
+        }
+        else
+        {
+            
+        Person p = addressBook.getPerson(id);
+        p.print();
+    }
+        
+    }
    
+    
     
 }

@@ -105,6 +105,7 @@ public class DVD
             }
             index++;
         }
+        
         if(found == true )
         {
             return copies.get(index2);
@@ -131,6 +132,15 @@ public class DVD
                 copy.print();
             }
         }
+    }
+    
+    
+    public void print()
+    {
+        System.out.println("ID: " + id);
+        System.out.println("Title: " + title);
+        System.out.println("Artist: " + artist);
+        System.out.println("Publication Date " + publicationDate);
     }
            
     

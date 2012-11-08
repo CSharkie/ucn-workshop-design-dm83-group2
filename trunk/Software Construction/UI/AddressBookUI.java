@@ -46,6 +46,7 @@ public class AddressBookUI
                           i=var;
                 }
                 new AddressBookUI();
+                exit = true;
                 break;
             }
             case 2: {
@@ -61,6 +62,7 @@ public class AddressBookUI
                           i=var;
                 }
                 new AddressBookUI();
+                exit = true;
                 break;
             }
             case 3: {
@@ -76,10 +78,12 @@ public class AddressBookUI
                           i=var;
                 }
                 new AddressBookUI();
+                exit = true;
                 break;
             }
             case 4: {
                 startPersonUpdate();
+                exit = true;
                 break;
             }
             case 5: {
@@ -95,6 +99,7 @@ public class AddressBookUI
                           i=var;
                 }
                 new AddressBookUI();
+                exit = true;
                 break;
             }
             case 6: {

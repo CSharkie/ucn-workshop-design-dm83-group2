@@ -12,7 +12,7 @@ public class MainMenu
 {
    private static AddressBookUI addressUI;
    private static DvdUI dvdUI;
-   private static RentUI rentUI;
+   private static LoanUI loanUI;
    
     /**
      * Constructor for objects of class MainMenu
@@ -43,7 +43,7 @@ public class MainMenu
             }
             case 3:
             {
-                startRent();
+                startLoan();
                 exit = true;
                 break;
             }
@@ -87,10 +87,10 @@ public class MainMenu
         dvdUI.start();
     }
     
-    private static void startRent()
+    private static void startLoan()
     {
-        //rentUI= new RentUI();
-        //rentUI.start();
+        loanUI= new LoanUI();
+        loanUI.start();
     }
     
     private static void writeEnd()

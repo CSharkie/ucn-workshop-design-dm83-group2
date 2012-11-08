@@ -45,6 +45,7 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
+                exit = true;
                 break;
             }
             case 2: {
@@ -60,6 +61,7 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
+                exit = true;
                 break;
             }
             case 3: {
@@ -75,6 +77,7 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
+                exit = true;
                 break;
             }
             case 4: {
@@ -90,6 +93,7 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
+                exit = true;
                 break;
             }
             case 5: {
@@ -105,6 +109,7 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
+                exit = true;
                 break;
             }
             case 6: {
@@ -123,7 +128,7 @@ public class PersonUpdateUI
     private int writeUpdateMenu()
     {
         Scanner keyboard = new Scanner(System.in);
-            System.out.println("\f *** UpdateMenu ***");
+            System.out.println("\f *** Person Update Menu ***");
             System.out.println(" (1) Name");
             System.out.println(" (2) Address");
             System.out.println(" (3) Postal Code");

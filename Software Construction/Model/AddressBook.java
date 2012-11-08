@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class AddressBook
+public  class AddressBook
 {
     private ArrayList<Person> addressBook;
     private Person person;
@@ -137,35 +137,6 @@ public class AddressBook
         {
             Person person = addressBook.get(index);
             if(person.getId() == id)
-            {
-                found = true;
-                index2 = index;
-            }
-            index++;
-        }
-        if(found == true)
-        {
-            return addressBook.get(index2);
-        }
-        else
-        {
-            return null;
-        }
-    }
-    
-    /**
-     * Find a person by the name
-     */
-    public Person getPersonName(String name)
-    {
-        int index = 0;
-        boolean found = false;
-        int index2 = 0;
-        
-        while (!found && index < addressBook.size())
-        {
-            Person person = addressBook.get(index);
-            if(person.getName().equals(name))
             {
                 found = true;
                 index2 = index;

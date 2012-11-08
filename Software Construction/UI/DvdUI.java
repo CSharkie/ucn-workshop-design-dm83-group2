@@ -242,7 +242,7 @@ public class DvdUI
         return purchaseDate;
     }
     
-    public static double inputPurhcasePrice()
+    public static double inputPurchasePrice()
     {   
         boolean ok = false;
         double purchasePrice = 0.0;
@@ -250,7 +250,7 @@ public class DvdUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write Serial Number:  ");
+            System.out.println(" Write Purchase Price:  ");
             try{
                 purchasePrice = keyboard.nextInt();
                 ok = true;
@@ -316,8 +316,14 @@ public class DvdUI
         int id = inputDvdID();
         int serialNumber = inputSerialNumber();
         String purchaseDate = inputPurchaseDate();
-        double purchasePrice = inputPurhcasePrice();
+        double purchasePrice = inputPurchasePrice();
         dvdControler.createCopy(id, serialNumber, purchaseDate, purchasePrice);
+    }
+    
+    private static void printCopy()
+    {
+        int id  = inputDvdID();
+        dvdControler.printAllCopies(id);
     }
     
     private static void removeDvd()

@@ -125,10 +125,7 @@ public class Person
     {
         for(Copy copy: loanDVDs)
         {
-        
-            
                 copy.print();
-            
         }
     }
     
@@ -136,6 +133,45 @@ public class Person
     {
         loanDVDs.add(newLoan);
     }
+    
+    public boolean checkLoanenCopy(int serialNumber,String purchaseDate)
+    {
+        boolean x = false;
+        for(Copy copy: loanDVDs)
+        {
+            if(copy.getSerialNumber()==serialNumber && copy.getPurchaseDate().equals(purchaseDate))
+            x= true;
+        }
+        return x;
+    }
+    
+    public void removeCopy(int serialNumber,String purchaseDate)
+    {
+        boolean exist = false;
+        Copy copy2 = new Copy();
+        for(Copy copy : loanDVDs)
+        {
+            if(copy.getSerialNumber()==serialNumber && copy.getPurchaseDate().equals(purchaseDate))
+           { exist = true;
+            copy2 = copy;
+           }
+        }
+        
+        if(exist = true)
+        {
+            removeCopy(copy2);
+        }
+    
+    }
+    
+    public void removeCopy(Copy copy)
+    {
+        loanDVDs.remove(copy);
+    }
+    
+            
+    
+    
     
     
 }

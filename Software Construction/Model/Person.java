@@ -92,6 +92,15 @@ public class Person
         this.phone = phone;
     }
     
+    public boolean getNumberOfLoans()
+    {
+        if(loanDVDs.size()>0)
+        return true;
+        else
+        return false;
+    }
+            
+    
      public void print()
     {
         System.out.println("ID:          " + id);

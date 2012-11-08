@@ -16,7 +16,7 @@ public class DVD
     private String publicationDate;
     private ArrayList<Copy> copies;
     private static DVD instance;
-    private int copiesNumber;
+    
 
     /**
      * Constructor for objects of class DVD
@@ -30,14 +30,6 @@ public class DVD
         copies = new ArrayList<Copy>();
     }
     
-    public DVD(int id,String title,String artist,String publicationDate,int copiesNumber)
-    {
-        this.id = id;
-        this.title = title;
-        this.artist = artist;
-        this.publicationDate = publicationDate;
-        this.copiesNumber = copiesNumber;
-    }
     
         
     
@@ -102,6 +94,8 @@ public class DVD
         copies.remove(copy);
     }
     
+    
+    
     public Copy getCopy(int id)
     {
         int index = 0;
@@ -131,7 +125,7 @@ public class DVD
     
     public void createCopy(int serialNumber, String purchaseDate,double purchasePrice)
     {
-        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice);
+        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice,true);
         addCopy(copy);
     }
     

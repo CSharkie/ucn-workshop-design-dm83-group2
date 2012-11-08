@@ -10,7 +10,6 @@ import Model.*;
 public class LoanControler
 {
     private Loan loan;
-    private LoanContainer loanContainer;
     private AddressBook addressBook;
     private DVD dvd;
     private DVDcontainer dvdContainer;
@@ -21,7 +20,7 @@ public class LoanControler
      */
     public LoanControler()
     {
-        loanContainer = loanContainer.getInstance();
+       
         addressBook = AddressBook.getInstance();
         dvdContainer = DVDcontainer.getInstance();
     }

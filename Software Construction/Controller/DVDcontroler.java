@@ -47,6 +47,11 @@ public class DVDcontroler
         dvdContainer.changeArtist(id,artist);
     }
     
+    public void changePublicationDate(int id,String publicationDate)
+    {
+        dvdContainer.changePublicationDate(id,publicationDate);
+    }
+    
     public void changeTitle(int id, String title)
     {
         dvdContainer.changeTitle( id, title);
@@ -69,7 +74,7 @@ public class DVDcontroler
     
     public void printAllDvd()
     {
-        dvdContainer.printAllDvds();
+        dvdContainer.printAllDvd();
     }
     
     

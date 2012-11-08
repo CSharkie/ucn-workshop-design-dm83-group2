@@ -13,6 +13,7 @@ public class Copy
     private String purchaseDate;
     private double purchasePrice;
     private DVD dvd;
+    boolean available;
 
     /**
      * Constructor for objects of class Copy
@@ -22,6 +23,14 @@ public class Copy
         this.serialNumber = serialNumber;
         this.purchaseDate = purchaseDate;
         this.purchasePrice = purchasePrice;
+    }
+    
+    public Copy(int serialNumber,String purchaseDate,double purchasePrice,boolean available)
+    {
+        this.serialNumber = serialNumber;
+        this.purchaseDate = purchaseDate;
+        this.purchasePrice = purchasePrice;
+        this.available = available;
     }
     
     public void setSerialNumber(int serialNumber)
@@ -47,6 +56,16 @@ public class Copy
     public String getPurchaseDate()
     {
         return purchaseDate;
+    }
+    
+    public boolean getAvability()
+    {
+        return available;
+    }
+    
+    public void setAvability(boolean a)
+    {
+        available = a;
     }
     
     public double getPurchasePrice()

@@ -21,6 +21,7 @@ public class Loan
     private ArrayList<Person> addressBook;
     private ArrayList<DVD>dvdList;
     private ArrayList<Copy>copies;
+    private ArrayList<Copy>loanen;
     
     
 
@@ -38,6 +39,7 @@ public class Loan
         addressBook = new ArrayList<Person>();
         dvdList = new ArrayList<DVD>();
         copies = new ArrayList<Copy>();
+        loanen = new ArrayList<Copy>();
     }
     
     
@@ -138,13 +140,13 @@ public class Loan
     
     
     
-        public void createDVD2(int id, String title, String artist, String publicationDate,int copies)
+        public void createDVD(int id, String title, String artist, String publicationDate)
     {
         if(checkIdDVD(id)==false) {
             System.out.println("ID already exist.");
         }
         else {
-        DVD dvd = new DVD(id, title,artist,publicationDate,copies);
+        DVD dvd = new DVD(id, title,artist,publicationDate);
         addDvd(dvd);
     }
     }
@@ -169,22 +171,97 @@ public class Loan
         return true;
     }
     
-        public void addCopy(Copy newCopy)
+     public boolean checkCopyId(int id)
     {
-        copies.add(newCopy);
-    }
-    
-       public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
-    {
-        if(checkIdDVD(id)==true)
+     
+        for(Copy copy: copies)
         {
-        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice);
-        addCopy(copy);
-    }
-    else 
-    { }
+            if(copy.getSerialNumber() == id)
+            return false;
+        }
+        
+        return true;
     }
     
+    
+    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
+    {
+        if(getDvd(id)==null)
+        {
+            System.out.println("Dvd id doesn't exist");
+        }
+        else
+        {
+        
+        DVD dvd = getDvd(id);
+        dvd.createCopy(serialNumber,purchaseDate,purchasePrice);
+        }
+    }
+    
+    public boolean checkCopyAvability(int id)
+    {
+        int i = 0;
+        for(Copy copy: copies)
+        {
+            if(copy.getSerialNumber()== id) {i++;}
+        }
+        if(i>0) return false;
+        else
+        return true;
+    }
+    
+    
+        public DVD getDvd(int id)
+    {
+        int index = 0;
+        boolean found = false;
+        int index2 = 0;
+        
+        while (!found && index < dvdList.size())
+        {
+            DVD dvd = dvdList.get(index);
+            if(dvd.getId() == id)
+            {
+                found = true;
+                index2 = index;
+            }
+            index++;
+        }
+        if(found == true)
+        {
+            return dvdList.get(index2);
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    public void changeCopyAvability(int id)
+    {
+        for(Copy copy: copies)
+        {
+            if(copy.getSerialNumber()== id)
+            copy.setAvability(true);
+        }
+    }
+    
+    public void makeLoan(int id, int serialNumber)
+    {
+        if(checkId(id)==false &&  checkCopyId(serialNumber)==true && checkCopyAvability(serialNumber)==true)
+        {
+            System.out.println("Loanen can be made");
+            changeCopyAvability(serialNumber);
+        }
+            
+        else
+        System.out.println("loanen can't be made");
+    }
+    
+    
+    
+  
+   
     
     
 }

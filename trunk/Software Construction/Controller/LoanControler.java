@@ -50,6 +50,11 @@ public class LoanControler
         loan.printLoanenDvd(personId);
     }
     
+    public void printPersonsWithDvds()
+    {
+        loan.printPersonsWithDvds();
+    }
+    
     
         
 }

@@ -178,7 +178,15 @@ public class Person
         loanDVDs.remove(copy);
     }
     
-            
+    public boolean numberOfPersonDvds()
+    {
+        if(loanDVDs.size()>0)
+        return true;
+        else
+        return false;
+    }
+        
+     
     
     
     

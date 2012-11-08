@@ -45,7 +45,6 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
-                exit = true;
                 break;
             }
             case 2: {
@@ -61,7 +60,6 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
-                exit = true;
                 break;
             }
             case 3: {
@@ -77,7 +75,6 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
-                exit = true;
                 break;
             }
             case 4: {
@@ -93,7 +90,6 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
-                exit = true;
                 break;
             }
             case 5: {
@@ -109,7 +105,6 @@ public class PersonUpdateUI
                           i=var;
                 }
                 new PersonUpdateUI();
-                exit = true;
                 break;
             }
             case 6: {

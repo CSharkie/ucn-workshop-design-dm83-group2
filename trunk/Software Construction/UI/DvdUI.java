@@ -47,7 +47,6 @@ public class DvdUI
                           i=var;
                 }
                 new DvdUI();
-                exit = true;
                 break;
             }
                 case 2: {
@@ -63,7 +62,6 @@ public class DvdUI
                             i=var;
                     }
                     new DvdUI();
-                    exit = true;
                     break;
                 }
                 case 3: {
@@ -79,7 +77,6 @@ public class DvdUI
                             i=var;
                     }
                     new DvdUI();
-                    exit = true;
                     break;
                 }
                 case 4: {
@@ -95,7 +92,6 @@ public class DvdUI
                             i=var;
                     }
                     new DvdUI();
-                    exit = true;
                     break;
                 }
                 case 5: {
@@ -111,7 +107,6 @@ public class DvdUI
                             i=var;
                     }
                     new DvdUI();
-                    exit = true;
                     break;
                 }
                 case 6: {
@@ -127,7 +122,6 @@ public class DvdUI
                             i=var;
                     }
                     new DvdUI();
-                    exit = true;
                     break;
                 }
                 case 7:

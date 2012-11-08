@@ -13,7 +13,6 @@ public class Loan
     private int id;
     private String date;
     private String period;
-    private String status;
     private Copy rentedCopy;
     private Person person;
     private DVD dvdCopies;
@@ -33,7 +32,6 @@ public class Loan
         this.id = id;
         this.date = date;
         this.period = period;
-        this.status = status;
         this.rentedCopy = rentedCopy;
         this.person = person;
         addressBook = new ArrayList<Person>();
@@ -59,11 +57,6 @@ public class Loan
         return period;
     }
     
-    public String getStatus()
-    {
-        return status;
-    }
-    
     public Copy getRentedCopy()
     {
         return rentedCopy;
@@ -72,6 +65,15 @@ public class Loan
     public Person getPerson()
     {
         return person;
+    }
+    
+    public void getPerson(int personId)
+    {
+        for(Person person: addressBook)
+        {
+            if(person.getId() == id)
+            person.print();
+        }
     }
     
     public void setId(int id)
@@ -88,12 +90,7 @@ public class Loan
     {
         this.period = period;
     }
-    
-    public void setStatus(String status)
-    {
-        this.status = status;
-    }
-    
+   
     public void setRentedCopy(Copy rentedCopy)
     {
         this.rentedCopy = rentedCopy;
@@ -183,6 +180,17 @@ public class Loan
         return true;
     }
     
+    public boolean checkLoanenId(int personId,int serialNumber,String purchaseDate)
+    {
+        boolean x = false;
+        for(Person person: addressBook)
+        {
+            if(person.getId() == personId && (person.checkLoanenCopy(serialNumber,purchaseDate))==true)
+            x= true;
+        }
+        return x;
+    }
+    
     
     public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
     {
@@ -209,7 +217,6 @@ public class Loan
         else
         return true;
     }
-    
     
         public DVD getDvd(int id)
     {
@@ -285,11 +292,16 @@ public class Loan
             person.printLoanenDvd();
         }
     }
-    
- 
-           
         
-    
+   public void removeCopy(int personID,int serialNumber,String purchaseDate)
+   {
+       for(Person person: addressBook)
+       {
+           if(checkId(personID)==false)
+           person.removeCopy(serialNumber,purchaseDate);
+        }
+    }
+        
     public void makeLoan(int personId,int dvdId, int serialNumber)
     {
         if(checkId(personId)==false &&  checkCopyId(dvdId,serialNumber)==true && checkIdDVD(dvdId) ==false && getCopyAvability(dvdId,serialNumber)==true )
@@ -304,6 +316,19 @@ public class Loan
         System.out.println("loanen can't be made");
     }
     
+    public void returnCopy(int personId,int dvdId,int serialNumber,String purchaseDate)
+    {
+        if(checkId(personId)==false && (checkLoanenId( personId,serialNumber, purchaseDate))==true)
+        {
+            System.out.println("The DVD has been returned");
+            changeCopyAvability(dvdId,serialNumber);
+            removeCopy(personId,serialNumber,purchaseDate);
+        }
+        else
+        System.out.println( "you can't return the dvd");
+        
+    }
+            
     
     
   

@@ -341,7 +341,7 @@ public class LoanUI
         return purchaseDate;
     }
     
-    public static double inputPurhcasePrice()
+    public static double inputPurchasePrice()
     {   
         boolean ok = false;
         double purchasePrice = 0.0;
@@ -349,7 +349,7 @@ public class LoanUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write Serial Number:  ");
+            System.out.println(" Write Purchase Price:  ");
             try{
                 purchasePrice = keyboard.nextInt();
                 ok = true;
@@ -415,7 +415,7 @@ public class LoanUI
         int id = inputDvdID();
         int serialNumber = inputSerialNumber();
         String purchaseDate = inputPurchaseDate();
-        double purchasePrice = inputPurhcasePrice();
+        double purchasePrice = inputPurchasePrice();
         dvdControler.createCopy(id, serialNumber, purchaseDate, purchasePrice);
     }
     

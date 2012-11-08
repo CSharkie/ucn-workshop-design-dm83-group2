@@ -338,5 +338,22 @@ public class Loan
         
     }
     
+    public void printPersonsWithDvds()
+    {   int i = 0;
+        for(Person person: addressBook)
+        {
+            if(person.numberOfPersonDvds()==true)
+            {
+            System.out.println("****Person " + i + " ****");
+            person.print();
+            System.out.println("This person has rented:");
+            person.printLoanenDvd();
+            System.out.println("**********************");
+            i++;
+        }
+            
+        }
+    }
+    
     
 }

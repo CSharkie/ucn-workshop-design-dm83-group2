@@ -10,55 +10,46 @@ import Model.*;
 public class LoanControler
 {
     private Loan loan;
-    private AddressBook addressBook;
-    private DVD dvd;
-    private DVDcontainer dvdContainer;
-    private Person person;
+   
 
     /**
      * Constructor for objects of class LoanControler
      */
     public LoanControler()
     {
-       
-        addressBook = AddressBook.getInstance();
-        dvdContainer = DVDcontainer.getInstance();
+       loan = Loan.getInstance();
     }
     
-    public void createRentWithId(int searchId, int dvdId, int searchSerialNumber, int id, String date, String period, String status)
+    public void createDVD(int id, String title, String artist, String publicationDate)
     {
-        Person person = addressBook.getPerson(searchId);
-        Copy rentedCopy = dvdContainer.getDvd(dvdId).getCopy(searchSerialNumber);
-        Loan newLoan = new Loan(id, date, period, status, rentedCopy, person);
-        loanContainer.addLoan(newLoan);
+        loan.createDVD(id, title, artist, publicationDate);
     }
     
-    public void createRentWithName(String searchName, int dvdId, int searchSerialNumber, int id, String date, String period, String status)
+    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
     {
-        Person person = addressBook.getPersonName(searchName);
-        Copy rentedCopy = dvdContainer.getDvd(dvdId).getCopy(searchSerialNumber);
-        Loan newLoan = new Loan(id, date, period, status, rentedCopy, person);
-        loanContainer.addLoan(newLoan);
+        loan.createCopy(id,serialNumber,purchaseDate,purchasePrice);
     }
-
-    /**
-     * returnDvd changes a rent object's status to Returned
-     */
     
-    public void returnRent(int serialNumber)
+    public void makeLoan(int personId,int dvdId, int serialNumber)
     {
-        Loan loan2 = loanContainer.findLoan(serialNumber);
-        loan2.setStatus("Returned");
-
+        loan.makeLoan(personId,dvdId,serialNumber);
     }
     
-    /**
-     * showLoanInfo prints the info connected to a rent object
-     */
-    
-    public void showLoanInfo(int loanId)
+    public void returnCopy(int personId,int dvdId,int serialNumber,String purchaseDate)
     {
-        loanContainer.showLoanInfo(loanId); 
+        loan.returnCopy(personId,dvdId,serialNumber,purchaseDate);
     }
     
+    public void createPerson(int id, String name, String address, int postalCode, String city, String phone)
+    {
+        loan.createPerson(id,name,address,postalCode,city,phone);
+    }
+    
+    public void printLoanenDvd(int personId)
+    {
+        loan.printLoanenDvd(personId);
+    }
+    
+    
+        
 }

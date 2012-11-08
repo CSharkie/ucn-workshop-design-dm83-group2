@@ -17,10 +17,12 @@ public class Loan
     private Person person;
     private DVD dvdCopies;
     private Copy copy;
-    private ArrayList<Person> addressBook;
-    private ArrayList<DVD>dvdList;
-    private ArrayList<Copy>copies;
-    private ArrayList<Copy>loanen;
+    private static ArrayList<Person> addressBook;
+    private static ArrayList<DVD>dvdList;
+    private static ArrayList<Copy>copies;
+    private static ArrayList<Copy>loanen;
+    private static Loan loanContainer;
+    private static Loan instance;
     
     
 
@@ -40,7 +42,14 @@ public class Loan
         loanen = new ArrayList<Copy>();
     }
     
-    
+      public static Loan getInstance()
+    {
+        if(instance == null)
+        {
+            instance = new Loan();
+        }
+        return instance;
+    }
     
     public int getId()
     {

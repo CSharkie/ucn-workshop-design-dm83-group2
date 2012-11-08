@@ -42,13 +42,13 @@ public class DVDcontainer
     }
     }
     
-        public void createDVD2(int id, String title, String artist, String publicationDate,int period)
+        public void createDVD2(int id, String title, String artist, String publicationDate)
     {
         if(checkId(id)==false) {
             System.out.println("ID already exist.");
         }
         else {
-        DVD dvd = new DVD(id, title,artist,publicationDate,period);
+        DVD dvd = new DVD(id, title,artist,publicationDate);
         addDvd(dvd);
     }
     }
@@ -178,6 +178,20 @@ public class DVDcontainer
         }
     }
     
+    public void changePublicationDate(int id,String publicationDate)
+    
+   {
+        if(getDvd(id)==null)
+        {
+            System.out.println("Dvd id doesn't exist");
+        }
+        else
+        {
+            DVD dvd = getDvd(id);
+            dvd.setPublicationDate(publicationDate);
+        }
+    }
+    
     public void removeDVD(int id)
     {
         DVD dvd = getDvd(id);
@@ -195,12 +209,12 @@ public class DVDcontainer
         }
     }
     
-    public void printAllDvds()
+    public void printAllDvd()
     {
         for(DVD dvd: dvdList)
         {
             dvd.print();
-            System.out.println("*****************");
+            System.out.println("**************");
         }
     }
             

@@ -14,7 +14,8 @@ public class Person
     private int postalCode;
     private String city;
     private String phone;
-    private static ArrayList<Copy> loanDVDs;
+    private ArrayList<Copy> loanDVDs;
+    
 
     /**
      * Constructor for objects of class Person
@@ -112,6 +113,28 @@ public class Person
     }
     else
         System.out.println("No dvds have been loan");
+    }
+    
+       public void createLoanenDvd(int serialNumber, String purchaseDate,double purchasePrice)
+    {
+        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice,true);
+        addLoanDvd(copy);
+    }
+    
+    public void printLoanenDvd(int id)
+    {
+        for(Copy copy: loanDVDs)
+        {
+            if(copy.getSerialNumber() == id)
+            {
+                copy.print();
+            }
+        }
+    }
+    
+    public void addLoanDvd(Copy newLoan)
+    {
+        loanDVDs.add(newLoan);
     }
     
     

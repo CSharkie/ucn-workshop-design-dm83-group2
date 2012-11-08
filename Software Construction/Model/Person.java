@@ -121,14 +121,14 @@ public class Person
         addLoanDvd(copy);
     }
     
-    public void printLoanenDvd(int id)
+    public void printLoanenDvd()
     {
         for(Copy copy: loanDVDs)
         {
-            if(copy.getSerialNumber() == id)
-            {
+        
+            
                 copy.print();
-            }
+            
         }
     }
     

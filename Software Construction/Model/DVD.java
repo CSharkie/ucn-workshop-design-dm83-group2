@@ -125,8 +125,37 @@ public class DVD
     
     public void createCopy(int serialNumber, String purchaseDate,double purchasePrice)
     {
-        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice,true);
+        if(checkId(serialNumber)==false) {
+            System.out.println("Serial Number already exist.");
+        }
+        else {
+        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice);
         addCopy(copy);
+             } 
+    }
+    
+    
+    public boolean getCopyAvability(int SerialNumber)
+    {
+        boolean x = false;
+        for(Copy copy: copies)
+        {
+            if(copy.getSerialNumber() == SerialNumber && copy.getAvability())
+            x = true;
+        }
+        return x;
+    }
+    
+        public boolean checkId(int id)
+    {
+     
+        for(Copy copy: copies)
+        {
+            if(copy.getSerialNumber() == id)
+            return false;
+        }
+        
+        return true;
     }
     
     public void printCopy(int id)
@@ -136,6 +165,17 @@ public class DVD
             if(copy.getSerialNumber() == id)
             {
                 copy.print();
+            }
+        }
+    }
+    
+    public void changeCopyAvability(int serialNumber)
+    {
+        for(Copy copy: copies)
+        {
+            if(copy.getSerialNumber()== serialNumber)
+            {
+                copy.changeAvability();
             }
         }
     }

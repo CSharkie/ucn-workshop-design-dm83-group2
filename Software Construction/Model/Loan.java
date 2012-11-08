@@ -171,12 +171,12 @@ public class Loan
         return true;
     }
     
-     public boolean checkCopyId(int id)
+     public boolean checkCopyId(int id,int serialNumber)
     {
      
-        for(Copy copy: copies)
+        for(DVD dvd: dvdList)
         {
-            if(copy.getSerialNumber() == id)
+            if(dvd.getId() == id && dvd.checkId(serialNumber)==true)
             return false;
         }
         
@@ -237,21 +237,67 @@ public class Loan
         }
     }
     
-    public void changeCopyAvability(int id)
+    public void changeCopyAvability(int dvdId,int serialNumber)
     {
-        for(Copy copy: copies)
+        for(DVD dvd: dvdList)
         {
-            if(copy.getSerialNumber()== id)
-            copy.setAvability(true);
+            if(dvd.getId()== dvdId)
+            dvd.changeCopyAvability(serialNumber);
         }
     }
     
-    public void makeLoan(int id, int serialNumber)
+    public boolean getCopyAvability(int dvdId,int serialNumber)
     {
-        if(checkId(id)==false &&  checkCopyId(serialNumber)==true && checkCopyAvability(serialNumber)==true)
+        boolean x = false;
+        for(DVD dvd: dvdList)
         {
-            System.out.println("Loanen can be made");
-            changeCopyAvability(serialNumber);
+        if(dvd.getId()==dvdId && dvd.getCopyAvability(serialNumber) == true)
+        x = true;
+    }
+    return x;
+    }
+    
+    public void addCopyToPerson(int personId, Copy copy)
+    {
+        for(Person person: addressBook)
+        {
+            if(person.getId()==personId)
+            person.addLoanDvd(copy);
+        }
+    }
+    
+   public Copy getCopy(int dvdId,int serialNumber)
+   {
+       Copy copy = new Copy();
+       for(DVD dvd: dvdList)
+       {
+           if(dvd.getId()==dvdId)
+           copy = dvd.getCopy(serialNumber);
+        }
+        return copy;
+    }
+    
+    public void printLoanenDvd(int personId)
+    {
+        for(Person person: addressBook)
+        {
+            if(person.getId()==personId)
+            person.printLoanenDvd();
+        }
+    }
+    
+ 
+           
+        
+    
+    public void makeLoan(int personId,int dvdId, int serialNumber)
+    {
+        if(checkId(personId)==false &&  checkCopyId(dvdId,serialNumber)==true && checkIdDVD(dvdId) ==false && getCopyAvability(dvdId,serialNumber)==true )
+        {
+            System.out.println("Loanen has been rented");
+            changeCopyAvability(dvdId,serialNumber);
+            copy = getCopy(dvdId,serialNumber);
+            addCopyToPerson(personId,copy);
         }
             
         else

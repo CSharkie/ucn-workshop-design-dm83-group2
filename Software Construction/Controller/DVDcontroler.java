@@ -18,7 +18,6 @@ public class DVDcontroler
      */
     public DVDcontroler()
     {
-        
         dvdContainer = DVDcontainer.getInstance();
     }
     

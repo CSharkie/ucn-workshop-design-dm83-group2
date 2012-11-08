@@ -3,67 +3,65 @@ import java.util.Scanner;
 import Controller.*;
 
 /**
- * Write a description of class DvdUI here.
+ * Write a description of class LoanUI here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class DvdUI
+public class LoanUI
 {
- 
     private static DVDcontroler dvdControler;
-    private static DvdUpdateUI dvdUpdateUI;
+    private static PersonControler personController;
 
     /**
-     * Constructor for objects of class DvdUI
+     * Constructor for objects of class LoanUI
      */
-    public DvdUI()
+    public LoanUI()
     {
         dvdControler = new DVDcontroler();
-    }
-
-    public static void start()
-    {
-        dvdMenu();
+        personController = new PersonControler();
     }
     
-    public static void dvdMenu()
+    public static void start()
     {
-        boolean exit= false;
+        loanMenu();
+    }
+    
+    public static void loanMenu()
+    {
+        boolean exit = false;
         while(!exit)
         {
-            int choise = writeDvdMenu();
+            int choise = writeLoanMenu();
             switch(choise) {
                 case 1: {
                     String i="";
                     while(!i.equals("1"))
-                {
-                    Scanner keyboard = new Scanner(System.in);
-                    createDVD();
-                    System.out.println();
-                    System.out.println(" (1) Return");
-                    System.out.println(" (Enter) Create a new DVD." );
-                    String var = keyboard.nextLine();
-                          i=var;
+                    {
+                        Scanner keyboard = new Scanner(System.in);
+                        createPerson();
+                        System.out.println();
+                        System.out.println(" (1) Return");
+                        System.out.println(" (Enter) Create a new person.." );
+                        String var = keyboard.nextLine();
+                        i=var;
+                    }
+                    new LoanUI();
+                    break;
                 }
-                new DvdUI();
-                exit = true;
-                break;
-            }
                 case 2: {
                     String i="";
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        printDvdDetails();
+                        createDVD();
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Print another dvd.");
+                        System.out.println(" (Enter) Create a new DVD." );
                         String var = keyboard.nextLine();
-                            i=var;
+                        i=var;
                     }
-                    new DvdUI();
-                    exit = true;
+                    new LoanUI();
                     break;
                 }
                 case 3: {
@@ -71,15 +69,14 @@ public class DvdUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        printAllDvd();
+                        createCopy();
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Print the list again.");
+                        System.out.println(" (Enter) Create another copy." );
                         String var = keyboard.nextLine();
-                            i=var;
+                        i=var;
                     }
-                    new DvdUI();
-                    exit = true;
+                    new LoanUI();
                     break;
                 }
                 case 4: {
@@ -87,15 +84,14 @@ public class DvdUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        createCopy();
+                        
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Create another copy.");
+                        System.out.println(" (Enter) Create a new Loan." );
                         String var = keyboard.nextLine();
-                            i=var;
+                        i=var;
                     }
-                    new DvdUI();
-                    exit = true;
+                    new LoanUI();
                     break;
                 }
                 case 5: {
@@ -103,15 +99,14 @@ public class DvdUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        checkCopy();
+                        
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Check again for copies.");
+                        System.out.println(" (Enter) Expand another Loan." );
                         String var = keyboard.nextLine();
-                            i=var;
+                        i=var;
                     }
-                    new DvdUI();
-                    exit = true;
+                    new LoanUI();
                     break;
                 }
                 case 6: {
@@ -119,58 +114,156 @@ public class DvdUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        removeDvd();
+                        
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Remove another DvD.");
+                        System.out.println(" (Enter) Remove another Loan." );
                         String var = keyboard.nextLine();
-                            i=var;
+                        i=var;
                     }
-                    new DvdUI();
-                    exit = true;
+                    new LoanUI();
                     break;
                 }
-                case 7:
-                {
-                    startDvdUpdate();
-                    exit = true;
+                case 7: {
+                    String i="";
+                    while(!i.equals("1"))
+                    {
+                        Scanner keyboard = new Scanner(System.in);
+                        
+                        System.out.println();
+                        System.out.println(" (1) Return");
+                        System.out.println(" (Enter) Print details about another Loan." );
+                        String var = keyboard.nextLine();
+                        i=var;
+                    }
+                    new LoanUI();
                     break;
                 }
                 case 8: {
+                    String i="";
+                    while(!i.equals("1"))
+                    {
+                        Scanner keyboard = new Scanner(System.in);
+                        
+                        System.out.println();
+                        System.out.println(" (1) Return");
+                        System.out.println(" (Enter) Print again the list of Loans." );
+                        String var = keyboard.nextLine();
+                        i=var;
+                    }
+                    new LoanUI();
+                    break;
+                }
+                case 9: {
                 MainMenu.mainMenuStart();
                 exit = true;
                 break;
-            }
-            
+                }
                 default: {
                 System.out.println(" Invalid selection, please try again! ");
                 break;
-            }        
+            }
+        }
     }
-}
-}
+    }
     
-        public static int writeDvdMenu()
+    
+    public static int writeLoanMenu()
     {
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("\n\n\f *** DVD Menu ***");
-        System.out.println(" (1) Create a DVD");
-        System.out.println(" (2) Print DVD details");
-        System.out.println(" (3) Print all DVDs");
-        System.out.println(" (4) Add a copy");
-        System.out.println(" (5) Check for copies");
-        System.out.println(" (6) Remove DVD");
-        System.out.println(" (7) Modify DVD");
-        System.out.println(" (8) Return");
+        System.out.println("\n\n\f *** Loan Menu ***");
+        System.out.println(" (1) Create Person");
+        System.out.println(" (2) Create DVD");
+        System.out.println(" (3) Create Copy of a DVD");
+        System.out.println(" (4) Create Loan");
+        System.out.println(" (5) Expand Loan");
+        System.out.println(" (6) Remove Loan");
+        System.out.println(" (7) Print Loan");
+        System.out.println(" (8) Print the list of Loans");
+        System.out.println(" (9) Return");
         System.out.print("\n \n Make your choice: ");
         int choise = keyboard.nextInt();
         return choise;
     }
-    
-    private static void startDvdUpdate()
+
+    public static int inputPersonsID()
+    {   
+        boolean ok = false;
+        int id = 0;
+        while(!ok)
+        {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println();
+            System.out.println(" Write Id:  ");
+            try{
+                id = keyboard.nextInt();
+                ok = true;
+            }
+            catch (Exception e)
+            {
+                System.out.println("You need to type in a number - try again!");
+                String input = keyboard.nextLine();
+            }
+        }
+        return id;
+    }
+
+    public static String inputName()
     {
-        dvdUpdateUI = new DvdUpdateUI();
-        dvdUpdateUI.start();
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println();  
+        System.out.println(" Write Name:  ");
+        String name = keyboard.nextLine();
+        return name;
+    }
+
+    public static int inputPostalCode()
+    {
+        boolean ok = false;
+        int postalCode = 0;
+        while(!ok)
+        {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println();
+            System.out.println(" Write Postal Code:  ");
+            try{
+                postalCode = keyboard.nextInt();
+                ok = true;
+            }
+            catch (Exception e)
+            {
+                System.out.println("You need to type in a number - try again!");
+                String input = keyboard.nextLine();
+            }
+        }
+        return postalCode;
+    }
+
+    public static String inputCity()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println();  
+        System.out.println(" Write City:  ");
+        String city = keyboard.nextLine();
+        return city;
+    } 
+
+    public static String inputPhone()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println();  
+        System.out.println(" Write Phone Number:  ");
+        String phone = keyboard.nextLine();
+        return phone;
+    } 
+
+    public static String inputAddress()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println();
+        System.out.println(" Write Address: ");
+        String address = keyboard.nextLine();
+        return address;
     }
     
     public static int inputDvdID()
@@ -297,6 +390,17 @@ public class DvdUI
         return publicationDate;
     }
     
+    private static void createPerson()
+    {
+        int id = inputPersonsID();
+        String name = inputName();
+        String address = inputAddress();
+        int postalCode = inputPostalCode();
+        String city = inputCity();
+        String phone = inputPhone();
+        personController.createPerson(id, name, address, postalCode, city, phone);
+    }
+    
     private static void createDVD()
     {
         int id = inputDvdID();
@@ -304,17 +408,6 @@ public class DvdUI
         String artist = inputArtist();
         String publicationDate = inputPublicationDate();
         dvdControler.createDVD(id, title, artist, publicationDate);
-    }
-    
-    public static void printDvdDetails()
-    {
-        int id = inputDvdID();
-        dvdControler.printDvd(id);
-    }
-    
-    private static void printAllDvd()
-    {
-        dvdControler.printAllDvd();
     }
     
     private static void createCopy()
@@ -326,17 +419,4 @@ public class DvdUI
         dvdControler.createCopy(id, serialNumber, purchaseDate, purchasePrice);
     }
     
-    private static void removeDvd()
-    {
-        int id = inputDvdID();
-        dvdControler.removeDVD(id);
-    }
-    
-    private static void checkCopy()
-    {
-        int id = inputCopyID();
-        int serialNumber = inputSerialNumber();
-        dvdControler.printCopy(id, serialNumber);
-    }
-        
 }

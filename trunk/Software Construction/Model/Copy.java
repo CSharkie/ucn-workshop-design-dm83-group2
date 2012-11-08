@@ -18,11 +18,16 @@ public class Copy
     /**
      * Constructor for objects of class Copy
      */
+    
+    public Copy()
+    {
+    }
     public Copy(int serialNumber,String purchaseDate,double purchasePrice)
     {
         this.serialNumber = serialNumber;
         this.purchaseDate = purchaseDate;
         this.purchasePrice = purchasePrice;
+        available = true;
     }
     
     public Copy(int serialNumber,String purchaseDate,double purchasePrice,boolean available)
@@ -63,9 +68,14 @@ public class Copy
         return available;
     }
     
-    public void setAvability(boolean a)
+    public boolean changeAvability()
     {
-        available = a;
+        if(available== true)
+        {available= false;}
+        else{
+        available = true;}
+        return available;
+        
     }
     
     public double getPurchasePrice()

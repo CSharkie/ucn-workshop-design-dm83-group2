@@ -169,6 +169,17 @@ public class DVD
         }
     }
     
+    public void printCopy()
+    {
+        for(Copy copy: copies)
+        {
+            
+            
+                copy.print();
+            
+        }
+    }
+    
     public void changeCopyAvability(int serialNumber)
     {
         for(Copy copy: copies)

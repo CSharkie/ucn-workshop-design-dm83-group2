@@ -77,6 +77,10 @@ public class DVDcontroler
         dvdContainer.printAllDvd();
     }
     
+    public void printAllCopies(int id)
+    {
+        dvdContainer.printAllCopies(id);
+    }
     
     
 }

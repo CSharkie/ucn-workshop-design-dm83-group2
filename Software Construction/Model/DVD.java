@@ -123,13 +123,13 @@ public class DVD
     }
     
     
-    public void createCopy(int serialNumber, String purchaseDate,double purchasePrice)
+    public void createCopy(int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
         if(checkId(serialNumber)==false) {
             System.out.println("Serial Number already exist.");
         }
         else {
-        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice);
+        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice,period);
         addCopy(copy);
              } 
     }
@@ -191,6 +191,18 @@ public class DVD
         }
     }
     
+    public void extendPeriod(int serialNumber,int addDays)
+    {
+        for(Copy copy: copies)
+        {
+            if(copy.getSerialNumber()==serialNumber)
+            {
+                copy.extendPeriod(addDays);
+            }
+        }
+    }
+            
+    
     
     public void print()
     {   
@@ -204,6 +216,8 @@ public class DVD
         System.out.println("*******************************");
         
     }
+    
+    
            
     
     

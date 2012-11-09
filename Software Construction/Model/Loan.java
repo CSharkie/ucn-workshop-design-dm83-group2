@@ -201,7 +201,7 @@ public class Loan
     }
     
     
-    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
+    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
         if(getDvd(id)==null)
         {
@@ -211,7 +211,7 @@ public class Loan
         {
         
         DVD dvd = getDvd(id);
-        dvd.createCopy(serialNumber,purchaseDate,purchasePrice);
+        dvd.createCopy(serialNumber,purchaseDate,purchasePrice,period);
         }
     }
     
@@ -354,6 +354,30 @@ public class Loan
             
         }
     }
+    
+    public void extendPeriod(int personId,int serialNumber,int addDays)
+    {
+        for(Person person: addressBook)
+        {
+            if(person.getId()==personId)
+            {
+                person.extendPeriod(serialNumber,addDays);
+            }
+        }
+    }
+    
+    public int getPeriod(int personId,int serialNumber)
+    {
+        for(Person person: addressBook)
+        {
+            if(person.getId()==personId)
+            {
+               return person.getPeriod(serialNumber);
+            }
+        }
+        return 0;
+    }
+        
     
     
 }

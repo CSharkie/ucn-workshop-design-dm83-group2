@@ -36,9 +36,9 @@ public class DVDcontroler
         dvdContainer.printDvd(id);
     }
     
-    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
+    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
-        dvdContainer.createCopy(id, serialNumber, purchaseDate, purchasePrice);
+        dvdContainer.createCopy(id, serialNumber, purchaseDate, purchasePrice,period);
     }
     
     public void changeArtist(int id,String artist)

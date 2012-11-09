@@ -315,14 +315,14 @@ public class Loan
     {
         if(checkId(personId)==false &&  checkCopyId(dvdId,serialNumber)==true && checkIdDVD(dvdId) ==false && getCopyAvability(dvdId,serialNumber)==true )
         {
-            System.out.println("Loanen has been rented");
+            System.out.println("Copy has been loaned.");
             changeCopyAvability(dvdId,serialNumber);
             copy = getCopy(dvdId,serialNumber);
             addCopyToPerson(personId,copy);
         }
             
         else
-        System.out.println("loanen can't be made");
+        System.out.println("Loan can't be made.");
     }
     
     public void returnCopy(int personId,int dvdId,int serialNumber,String purchaseDate)
@@ -334,12 +334,12 @@ public class Loan
             removeCopy(personId,serialNumber,purchaseDate);
         }
         else
-        System.out.println( "you can't return the dvd");
+        System.out.println( "You can't return the dvd");
         
     }
     
     public void printPersonsWithDvds()
-    {   int i = 0;
+    {   int i = 1;
         for(Person person: addressBook)
         {
             if(person.numberOfPersonDvds()==true)

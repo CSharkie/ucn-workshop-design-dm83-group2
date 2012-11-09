@@ -95,9 +95,12 @@ public class PersonControler
         person.list();
     }
     
-    
-    
-    
-    
+    /**
+     * Just something funny :)
+     */
+    public void easterEgg()
+    {
+        person.easterEgg();
+    }
     
 }

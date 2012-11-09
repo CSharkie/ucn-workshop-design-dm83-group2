@@ -88,7 +88,7 @@ public class DVDcontainer
         }
     }
     
-    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
+    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
         if(getDvd(id)==null)
         {
@@ -98,7 +98,7 @@ public class DVDcontainer
         {
         
         DVD dvd = getDvd(id);
-        dvd.createCopy(serialNumber,purchaseDate,purchasePrice);
+        dvd.createCopy(serialNumber,purchaseDate,purchasePrice, period);
         }
     }
     

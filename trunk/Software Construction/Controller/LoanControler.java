@@ -25,9 +25,9 @@ public class LoanControler
         loan.createDVD(id, title, artist, publicationDate);
     }
     
-    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice)
+    public void createCopy(int id,int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
-        loan.createCopy(id,serialNumber,purchaseDate,purchasePrice);
+        loan.createCopy(id,serialNumber,purchaseDate,purchasePrice,period);
     }
     
     public void makeLoan(int personId,int dvdId, int serialNumber)
@@ -53,6 +53,16 @@ public class LoanControler
     public void printPersonsWithDvds()
     {
         loan.printPersonsWithDvds();
+    }
+    
+    public void extendPeriod(int personId,int serialNumber,int addDays)
+    {
+        loan.extendPeriod(personId,serialNumber,addDays);
+    }
+    
+    public int getPeriod(int personId,int serialNumber)
+    {
+        return loan.getPeriod(personId,serialNumber);
     }
     
     

@@ -124,9 +124,9 @@ public class Person
         System.out.println("No dvds have been loan");
     }
     
-       public void createLoanenDvd(int serialNumber, String purchaseDate,double purchasePrice)
+       public void createLoanenDvd(int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
-        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice,true);
+        Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice,true,period);
         addLoanDvd(copy);
     }
     
@@ -137,6 +137,31 @@ public class Person
                 copy.print();
         }
     }
+    
+    public void extendPeriod(int serialNumber,int addDays)
+    {
+        for(Copy copy: loanDVDs)
+        {
+                if(copy.getSerialNumber()==serialNumber)
+                {
+                    copy.extendPeriod(addDays);
+                }
+        }
+    }
+    
+    public int getPeriod(int serialNumber)
+    {
+        
+       for(Copy copy: loanDVDs)
+        {
+                if(copy.getSerialNumber()==serialNumber)
+                {
+                     return copy.getPeriod();
+                }
+            }
+            return 0;
+     }
+    
     
     public void addLoanDvd(Copy newLoan)
     {
@@ -185,10 +210,6 @@ public class Person
         else
         return false;
     }
-        
-     
-    
-    
-    
+            
     
 }

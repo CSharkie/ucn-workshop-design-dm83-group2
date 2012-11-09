@@ -2,10 +2,7 @@ package Model;
 
 
 /**
- * Write a description of class Copy here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The class creates copies by initiating different attributes.
  */
 public class Copy
 {
@@ -17,12 +14,16 @@ public class Copy
     boolean available;
 
     /**
-     * Constructor for objects of class Copy
+     * Constructor(empty) for objects of class Copy.
      */
     
     public Copy()
     {
     }
+    
+    /**
+     * Constructor without the availability attribute./
+     */
     public Copy(int serialNumber,String purchaseDate,double purchasePrice,int period)
     {
         this.serialNumber = serialNumber;
@@ -31,7 +32,9 @@ public class Copy
         this.period = period;
         available = true;
     }
-    
+    /**
+     * Consistent constructor for objects of class Copy..
+     */
     public Copy(int serialNumber,String purchaseDate,double purchasePrice,boolean available,int period)
     {
         this.serialNumber = serialNumber;
@@ -41,11 +44,17 @@ public class Copy
         this.period = period;
     }
     
+    /**
+     * A method for inserting a serial number.
+     */
     public void setSerialNumber(int serialNumber)
     {
         this.serialNumber = serialNumber;
     }
     
+    /**
+     * A method for initializing the wanted period of lending.
+     */
     public void setPeriod(int period)
     {
         if(period>0)
@@ -54,30 +63,52 @@ public class Copy
         }
     }
     
+    /**
+     * Sets purchase date of the copy.
+     */
+    
     public void setPurchaseDate(String purchaseDate)
     {
         this.purchaseDate = purchaseDate;
     }
     
+    /**
+     * Sets purchase price of a copy.
+     */
     public void setPurchasePrice(double purchasePrice)
     {
         this.purchasePrice = purchasePrice;
     }
+    
+    /**
+     * Gives information about the serial number of the copy.
+     */
     
     public int getSerialNumber()
     {
         return serialNumber;
     }
     
+    /**
+     * Gives information about the purchase date of the copy.
+     */
+    
     public String getPurchaseDate()
     {
         return purchaseDate;
     }
     
+    /**
+     * Checks the availability of the copy.
+     */
     public boolean getAvability()
     {
         return available;
     }
+    
+    /**
+     * Changes the availability status of the copy.
+     */
     
     public boolean changeAvability()
     {
@@ -89,16 +120,28 @@ public class Copy
         
     }
     
+    /**
+     * Returns information about the purrchase price.
+     */
+    
     public double getPurchasePrice()
     {
         return purchasePrice;
     }
+    
+    /**
+     * Returns information about the DVD the copy created.
+     */
     
     public DVD getDvd()
     {
         return dvd;
     }
     
+    /**
+     * Prints information about the coppy,
+     * consisting of all attributes connected with it.
+     */
     public void print()
     {   
         System.out.println("********************************");
@@ -110,10 +153,20 @@ public class Copy
         System.out.println(" ");
     }
     
+    /**
+     * Extends the period of the time
+     * the copy is lent.
+     */
+    
     public void extendPeriod(int addDays)
     {
         period = period+ addDays;
     }
+    
+    /**
+     * Returns the period the copy is supposed
+     * to be lent out.
+     */
     
     public int getPeriod()
     {

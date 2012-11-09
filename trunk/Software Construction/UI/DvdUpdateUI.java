@@ -20,11 +20,18 @@ public class DvdUpdateUI
         dvdControler = new DVDcontroler();
     }
     
+    
+    /**
+     * Method to start the DvD Update UI
+     */
     public static void start()
     {
         updateMenu();
     }
     
+    /**
+     * Method for the options in the menu list
+     */
     public static void updateMenu()
     {
         boolean exit = false;
@@ -90,6 +97,10 @@ public class DvdUpdateUI
     }
     }
     
+    
+    /**
+     * Method to print the DvD Update menu options
+     */
     private static int writeUpdateMenu()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -103,6 +114,9 @@ public class DvdUpdateUI
             return choise;
     }
     
+    /**
+     * Method for the dvd id
+     */
     public static int inputDvdID()
     {   
         boolean ok = false;
@@ -125,6 +139,9 @@ public class DvdUpdateUI
         return id;
     }
     
+    /**
+     * Method for the dvd title
+     */
         public static String inputTitle()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -134,6 +151,9 @@ public class DvdUpdateUI
         return title;
     }
     
+    /**
+     * Method for the dvd artist
+     */
         public static String inputArtist()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -143,6 +163,9 @@ public class DvdUpdateUI
         return artist;
     }
     
+    /**
+     * Method for the dvd publication date
+     */
     public static String inputPublicationDate()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -152,6 +175,9 @@ public class DvdUpdateUI
         return publicationDate;
     }
     
+    /**
+     * Method to change the artist
+     */
     public static void changeArtist()
     {
         int id = inputDvdID();
@@ -159,6 +185,9 @@ public class DvdUpdateUI
         dvdControler.changeArtist(id, artist);
     }
     
+    /**
+     * Method to change the title
+     */
     public static void changeTitle()
     {
         int id = inputDvdID();
@@ -166,6 +195,9 @@ public class DvdUpdateUI
         dvdControler.changeTitle(id, title);
     }
     
+    /**
+     * Method to change te publication date
+     */
     public static void changePublicationDate()
     {
         int id = inputDvdID();

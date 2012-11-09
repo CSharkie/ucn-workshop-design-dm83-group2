@@ -21,12 +21,18 @@ public class DvdUI
     {
         dvdControler = new DVDcontroler();
     }
-
+    
+    /**
+     * Method to start he DvD UI
+     */
     public static void start()
     {
         dvdMenu();
     }
     
+    /**
+     * Method for the options in the menu list
+     */
     public static void dvdMenu()
     {
         boolean exit= false;
@@ -144,6 +150,9 @@ public class DvdUI
 }
 }
     
+    /**
+     * Method to print the DvD menu options
+     */
         public static int writeDvdMenu()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -161,12 +170,18 @@ public class DvdUI
         return choise;
     }
     
+    /**
+     * Method to start the DvD Update UI
+     */
     private static void startDvdUpdate()
     {
         dvdUpdateUI = new DvdUpdateUI();
         dvdUpdateUI.start();
     }
     
+    /**
+     * Method for the dvd id
+     */
     public static int inputDvdID()
     {   
         boolean ok = false;
@@ -189,6 +204,9 @@ public class DvdUI
         return id;
     }
     
+    /**
+     * Method for the id of a copy
+     */
     public static int inputCopyID()
     {   
         boolean ok = false;
@@ -211,6 +229,9 @@ public class DvdUI
         return copyId;
     }
     
+    /**
+     * Method for the copy serial number
+     */
     public static int inputSerialNumber()
     {   
         boolean ok = false;
@@ -233,6 +254,9 @@ public class DvdUI
         return serialNumber;
     }
     
+    /**
+     * Method for the copy purchase date
+     */
     public static String inputPurchaseDate()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -242,6 +266,9 @@ public class DvdUI
         return purchaseDate;
     }
     
+    /**
+     * Method for the purchase price
+     */
     public static double inputPurchasePrice()
     {   
         boolean ok = false;
@@ -264,6 +291,9 @@ public class DvdUI
         return purchasePrice;
     }
     
+    /**
+     * Method for the loan period
+     */
     public static int inputPeriod()
     {   
         boolean ok = false;
@@ -286,6 +316,9 @@ public class DvdUI
         return period;
     }
     
+    /**
+     * Method for the dvd title
+     */
         public static String inputTitle()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -295,6 +328,9 @@ public class DvdUI
         return title;
     }
     
+    /**
+     * Method for the dvd artist
+     */
         public static String inputArtist()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -304,6 +340,9 @@ public class DvdUI
         return artist;
     }
     
+    /**
+     * Method for the dvd publication date
+     */
     public static String inputPublicationDate()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -313,6 +352,9 @@ public class DvdUI
         return publicationDate;
     }
     
+    /**
+     * Method to create a new dvd
+     */
     private static void createDVD()
     {
         int id = inputDvdID();
@@ -322,17 +364,26 @@ public class DvdUI
         dvdControler.createDVD(id, title, artist, publicationDate);
     }
     
+    /**
+     * Method to print a dvd details by the id
+     */
     public static void printDvdDetails()
     {
         int id = inputDvdID();
         dvdControler.printDvd(id);
     }
     
+    /**
+     * Method to print the list of all the dvd's
+     */
     private static void printAllDvd()
     {
         dvdControler.printAllDvd();
     }
     
+    /**
+     * Method to create a new dvd copy
+     */
     private static void createCopy()
     {
         int id = inputDvdID();
@@ -343,18 +394,27 @@ public class DvdUI
         dvdControler.createCopy(id, serialNumber, purchaseDate, purchasePrice, period);
     }
     
+    /**
+     * Method to print details about a copy
+     */
     private static void printCopy()
     {
         int id  = inputDvdID();
         dvdControler.printAllCopies(id);
     }
     
+    /**
+     * Method to remove a dvd
+     */
     private static void removeDvd()
     {
         int id = inputDvdID();
         dvdControler.removeDVD(id);
     }
     
+    /**
+     * Method to check for a copy
+     */
     private static void checkCopy()
     {
         int id = inputCopyID();

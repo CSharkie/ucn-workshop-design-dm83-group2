@@ -175,7 +175,7 @@ public class DvdUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write Id:  ");
+            System.out.println(" Write DvD Id:  ");
             try{
                 id = keyboard.nextInt();
                 ok = true;
@@ -197,7 +197,7 @@ public class DvdUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write Id:  ");
+            System.out.println(" Write Copy Id:  ");
             try{
                 copyId = keyboard.nextInt();
                 ok = true;
@@ -264,6 +264,28 @@ public class DvdUI
         return purchasePrice;
     }
     
+    public static int inputPeriod()
+    {   
+        boolean ok = false;
+        int period = 0;
+        while(!ok)
+        {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println();
+            System.out.println(" Write the Period for loan:  ");
+            try{
+                period = keyboard.nextInt();
+                ok = true;
+            }
+            catch (Exception e)
+            {
+                System.out.println("You need to type in a number - try again!");
+                String input = keyboard.nextLine();
+            }
+        }
+        return period;
+    }
+    
         public static String inputTitle()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -315,9 +337,10 @@ public class DvdUI
     {
         int id = inputDvdID();
         int serialNumber = inputSerialNumber();
+        int period = inputPeriod();
         String purchaseDate = inputPurchaseDate();
         double purchasePrice = inputPurchasePrice();
-        dvdControler.createCopy(id, serialNumber, purchaseDate, purchasePrice);
+        dvdControler.createCopy(id, serialNumber, purchaseDate, purchasePrice, period);
     }
     
     private static void printCopy()

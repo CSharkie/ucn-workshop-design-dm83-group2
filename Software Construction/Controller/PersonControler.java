@@ -57,9 +57,9 @@ public class PersonControler
         person.updatePersonPhone(searchId, phone);
     }
     
-    public void print(int id)
+    public void print(int searchId)
     {
-        person.print(id);
+        person.print(searchId);
     }
     
     public void printAll()

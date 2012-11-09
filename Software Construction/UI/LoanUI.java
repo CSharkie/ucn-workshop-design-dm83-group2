@@ -10,16 +10,14 @@ import Controller.*;
  */
 public class LoanUI
 {
-    private static DVDcontroler dvdControler;
-    private static PersonControler personController;
+    private static LoanControler loanControler;
 
     /**
      * Constructor for objects of class LoanUI
      */
     public LoanUI()
     {
-        dvdControler = new DVDcontroler();
-        personController = new PersonControler();
+        loanControler = new LoanControler();
     }
     
     public static void start()
@@ -84,7 +82,7 @@ public class LoanUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        
+                        makeLoan();
                         System.out.println();
                         System.out.println(" (1) Return");
                         System.out.println(" (Enter) Create a new Loan." );
@@ -99,7 +97,7 @@ public class LoanUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        
+                        expandPeriod();
                         System.out.println();
                         System.out.println(" (1) Return");
                         System.out.println(" (Enter) Expand another Loan." );
@@ -114,10 +112,10 @@ public class LoanUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        
+                        returnCopy();
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Remove another Loan." );
+                        System.out.println(" (Enter) Return another Loan." );
                         String var = keyboard.nextLine();
                         i=var;
                     }
@@ -129,7 +127,7 @@ public class LoanUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        
+                        printLoanenDvd();
                         System.out.println();
                         System.out.println(" (1) Return");
                         System.out.println(" (Enter) Print details about another Loan." );
@@ -144,10 +142,10 @@ public class LoanUI
                     while(!i.equals("1"))
                     {
                         Scanner keyboard = new Scanner(System.in);
-                        
+                        printAll();
                         System.out.println();
                         System.out.println(" (1) Return");
-                        System.out.println(" (Enter) Print again the list of Loans." );
+                        System.out.println(" (Enter) Print again the list of Persons that have Loans." );
                         String var = keyboard.nextLine();
                         i=var;
                     }
@@ -177,7 +175,7 @@ public class LoanUI
         System.out.println(" (3) Create Copy of a DVD");
         System.out.println(" (4) Create Loan");
         System.out.println(" (5) Expand Loan");
-        System.out.println(" (6) Remove Loan");
+        System.out.println(" (6) Return Copy");
         System.out.println(" (7) Print Loan");
         System.out.println(" (8) Print the list of Loans");
         System.out.println(" (9) Return");
@@ -194,7 +192,7 @@ public class LoanUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write Id:  ");
+            System.out.println(" Write Person Id:  ");
             try{
                 id = keyboard.nextInt();
                 ok = true;
@@ -274,7 +272,7 @@ public class LoanUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write Id:  ");
+            System.out.println(" Write DvD Id:  ");
             try{
                 id = keyboard.nextInt();
                 ok = true;
@@ -296,7 +294,7 @@ public class LoanUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write Id:  ");
+            System.out.println(" Write Copy Id:  ");
             try{
                 copyId = keyboard.nextInt();
                 ok = true;
@@ -330,6 +328,28 @@ public class LoanUI
             }
         }
         return serialNumber;
+    }
+    
+    public static int inputPeriod()
+    {   
+        boolean ok = false;
+        int period = 0;
+        while(!ok)
+        {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println();
+            System.out.println(" Write the Period for loan:  ");
+            try{
+                period = keyboard.nextInt();
+                ok = true;
+            }
+            catch (Exception e)
+            {
+                System.out.println("You need to type in a number - try again!");
+                String input = keyboard.nextLine();
+            }
+        }
+        return period;
     }
     
     public static String inputPurchaseDate()
@@ -398,7 +418,7 @@ public class LoanUI
         int postalCode = inputPostalCode();
         String city = inputCity();
         String phone = inputPhone();
-        personController.createPerson(id, name, address, postalCode, city, phone);
+        loanControler.createPerson(id, name, address, postalCode, city, phone);
     }
     
     private static void createDVD()
@@ -407,16 +427,53 @@ public class LoanUI
         String title = inputTitle();
         String artist = inputArtist();
         String publicationDate = inputPublicationDate();
-        dvdControler.createDVD(id, title, artist, publicationDate);
+        loanControler.createDVD(id, title, artist, publicationDate);
     }
     
     private static void createCopy()
     {
         int id = inputDvdID();
         int serialNumber = inputSerialNumber();
+        int period = inputPeriod();
         String purchaseDate = inputPurchaseDate();
         double purchasePrice = inputPurchasePrice();
-        dvdControler.createCopy(id, serialNumber, purchaseDate, purchasePrice);
+        loanControler.createCopy(id, serialNumber, purchaseDate, purchasePrice, period);
+    }
+    
+    private static void makeLoan()
+    {
+        int personId = inputPersonsID();
+        int dvdId = inputDvdID();
+        int serialNumber = inputSerialNumber();
+        loanControler.makeLoan(personId, dvdId, serialNumber);
+    }
+    
+    private static void returnCopy()
+    {
+        int personId = inputPersonsID();
+        int dvdId = inputDvdID();
+        int serialNumber = inputSerialNumber();
+        String purchaseDate = inputPurchaseDate();
+        loanControler.returnCopy(personId, dvdId, serialNumber, purchaseDate);
+    }
+    
+    private static void expandPeriod()
+    {
+        int personId = inputPersonsID();
+        int serialNumber = inputSerialNumber();
+        int period = inputPeriod();
+        loanControler.extendPeriod(personId, serialNumber, period);
+    }
+    
+    private static void printLoanenDvd()
+    {
+        int personId = inputPersonsID();
+        loanControler.printLoanenDvd(personId);
+    }
+    
+    private static void printAll()
+    {
+        loanControler.printPersonsWithDvds();
     }
     
 }

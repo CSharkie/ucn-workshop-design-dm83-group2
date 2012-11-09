@@ -170,11 +170,17 @@ public  class AddressBook
      */
     public void print(int id)
     {
+        boolean found = false;
         for(Person person : addressBook)
         {
             if(person.getId() == id)
             {
                 person.print();
+                found = true;
+            }
+            else
+            {
+                System.out.println("There is no person with this ID.");
             }
         }
     }

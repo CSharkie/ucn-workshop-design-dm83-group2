@@ -282,4 +282,12 @@ public class AddressBookUI
         personController.printAll();
     }
     
+    /**
+     * Just something funny :)
+     */
+    public void easterEgg()
+    {
+        personController.easterEgg();
+    }
+    
 }

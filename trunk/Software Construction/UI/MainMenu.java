@@ -56,6 +56,12 @@ public class MainMenu
                 exit = true;
                 break;
             }
+            case 666:
+            {
+                easterEgg();
+                exit = true;
+                break;
+            }
             default: 
             {
                 System.out.println(" Invalid selection, please try again! ");
@@ -106,6 +112,14 @@ public class MainMenu
     {
         loanUI= new LoanUI();
         loanUI.start();
+    }
+    
+    /**
+     * Just something funny :)
+     */
+    private static void easterEgg()
+    {
+        addressUI.easterEgg();
     }
     
     /**

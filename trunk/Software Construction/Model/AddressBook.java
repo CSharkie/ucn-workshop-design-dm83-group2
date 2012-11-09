@@ -184,6 +184,38 @@ public  class AddressBook
             }
         }
     }
+    
+    public void easterEgg()
+    {
+        System.out.println("          ¶¶_¶¶__¶¶_¶¶_¶ ");
+        System.out.println("         ¶¶_¶¶_¶¶_¶¶_¶¶¶ ");
+        System.out.println("     ¶¶¶¶¶            ¶¶¶¶¶¶¶ ");
+        System.out.println("   ¶¶¶¶¶     ANDREI    ¶¶¶¶¶¶¶ ");
+        System.out.println("  ¶¶¶¶¶      CRISTI      ¶¶¶¶¶¶ ");
+        System.out.println("  ¶¶¶¶      CRISTINA      ¶¶¶¶ ");
+        System.out.println("   ¶¶        DAVID         ¶¶¶ ");
+        System.out.println("   ¶         JOANA          ¶¶¶¶ ");
+        System.out.println("  ¶¶     ¶¶¶      ¶¶        ¶¶¶¶¶¶¶ ");
+        System.out.println("  ¶     ¶¶¶¶     ¶¶¶¶¶      ¶¶¶¶¶¶ ¶ ");
+        System.out.println("  ¶    ¶¶¶¶¶    ¶¶¶¶¶¶¶¶    ¶¶¶¶¶¶  ¶ ");
+        System.out.println("  ¶¶  ¶¶¶¶¶      ¶¶¶¶¶¶¶   ¶¶¶¶¶¶¶   ¶ ");
+        System.out.println("   ¶  ¶¶¶          ¶¶¶¶   ¶¶¶¶¶¶¶¶¶   ¶ ");
+        System.out.println("   ¶¶                    ¶¶¶¶¶¶¶¶¶¶   ¶¶¶ ");
+        System.out.println("   ¶¶¶     ¶¶¶¶¶¶       ¶¶¶¶¶¶¶¶¶¶¶   ¶¶¶¶ ");
+        System.out.println("   ¶¶¶¶¶   ¶¶¶¶¶¶     ¶¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶¶ ");
+        System.out.println("   ¶¶¶¶¶¶¶         ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶¶¶¶ ");
+        System.out.println("   ¶¶¶¶¶¶¶¶  ¶¶¶   ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶ ");
+        System.out.println("    ¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ");
+        System.out.println("    ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶¶ ");
+        System.out.println("    ¶¶¶¶¶¶¶¶¶_¶¶¶¶¶¶¶_¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶ ");
+        System.out.println("  ¶¶¶¶¶¶¶¶¶¶¶         ¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶ ");
+        System.out.println("  ¶¶¶¶¶¶¶¶¶¶         ¶¶¶¶¶¶¶¶¶¶¶ ");
+        System.out.println("   ¶¶¶¶¶¶¶         ¶¶¶¶¶¶¶¶¶¶¶¶ ");
+        System.out.println("                   ¶¶¶¶¶¶¶¶¶¶¶ ");
+        System.out.println("                   ¶¶¶¶¶¶¶¶¶¶ ");
+        System.out.println();
+        System.out.println(" System Shutting Down! You made the panda SAD! :) ");
+    }
 
     
 }

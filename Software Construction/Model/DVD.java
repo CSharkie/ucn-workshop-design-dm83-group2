@@ -30,9 +30,6 @@ public class DVD
         copies = new ArrayList<Copy>();
     }
     
-    
-        
-    
     public static DVD getInstance(int id,String title,String artist,String publicationDate)
     {
         

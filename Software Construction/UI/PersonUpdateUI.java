@@ -20,11 +20,17 @@ public class PersonUpdateUI
         personController = new PersonControler();
     }
     
+    /**
+     * Method to start the Person Update UI
+     */
     public void start()
     {
         updateMenu();
     }
 
+    /**
+     * Method for the options in the Person Update Menu
+     */
     public void updateMenu()
     {
         boolean exit = false;
@@ -120,6 +126,9 @@ public class PersonUpdateUI
     }
     }
     
+    /**
+     * Method to print all the options of the Person Update UI
+     */
     private int writeUpdateMenu()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -135,6 +144,9 @@ public class PersonUpdateUI
             return choise;
     }
     
+    /**
+     * Method for the persons id
+     */
     public int inputPersonsID()
     {   
         boolean ok = false;
@@ -157,6 +169,9 @@ public class PersonUpdateUI
         return id;
     }
 
+    /**
+     * Method for the persons name
+     */
     public String inputName()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -166,6 +181,9 @@ public class PersonUpdateUI
         return name;
     }
 
+    /**
+     * Method for the persons postal code
+     */
     public int inputPostalCode()
     {
         boolean ok = false;
@@ -188,6 +206,9 @@ public class PersonUpdateUI
         return postalCode;
     }
 
+    /**
+     * Method for the persons city
+     */
     public String inputCity()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -197,6 +218,9 @@ public class PersonUpdateUI
         return city;
     } 
 
+    /**
+     * Method for the persons phone number
+     */
     public String inputPhone()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -206,6 +230,9 @@ public class PersonUpdateUI
         return phone;
     } 
 
+    /**
+     * Method for the persons address
+     */
     public String  inputAddress()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -215,6 +242,9 @@ public class PersonUpdateUI
         return address;
     }
     
+    /**
+     * Method to update the persons name
+     */
     private void updatePersonName()
     {
         int searchId = inputPersonsID();
@@ -222,6 +252,9 @@ public class PersonUpdateUI
         personController.updatePersonName(searchId, name);
     }
     
+    /**
+     * Method to update the persons address
+     */
     private void updatePersonAddress()
     {
         int searchId = inputPersonsID();
@@ -229,6 +262,9 @@ public class PersonUpdateUI
         personController.updatePersonAddress(searchId, address);
     }
     
+    /**
+     * Method to update the persons postal code
+     */
     private void updatePersonPostalCode()
     {
         int searchId = inputPersonsID();
@@ -236,6 +272,9 @@ public class PersonUpdateUI
         personController.updatePersonPostalCode(searchId, postalCode);
     }
     
+    /**
+     * Method to update the persons city
+     */
     private void updatePersonCity()
     {
         int searchId = inputPersonsID();
@@ -243,6 +282,9 @@ public class PersonUpdateUI
         personController.updatePersonCity(searchId, city);
     }
     
+    /**
+     * Method to update the persons name
+     */
     private void updatePersonPhone()
     {
         int searchId = inputPersonsID();

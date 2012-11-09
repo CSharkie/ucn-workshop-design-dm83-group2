@@ -15,13 +15,16 @@ public class MainMenu
    private static LoanUI loanUI;
    
     /**
-     * Constructor for objects of class MainMenu
+     * Method to start the main UI
      */
     public MainMenu()
     {
         mainMenuStart();
     }
     
+    /**
+     * Method for the options in the menu list
+     */
     public static void mainMenuStart()
     {
         boolean exit=false;
@@ -62,6 +65,9 @@ public class MainMenu
     }
     }
     
+    /**
+     * Method that writes the options of the menu
+     */
     private static int writeMainMenu()
     {       
             Scanner keyboard = new Scanner(System.in);
@@ -75,24 +81,36 @@ public class MainMenu
             return choise;
     }
     
+    /**
+     * Method to start the Address Book UI
+     */
     private static void startAddressBook()
     {
         addressUI = new AddressBookUI();
         addressUI.start();
     }
-
+    
+    /**
+     * Mothod to start the DVD UI
+     */
     private static void startDvd()
     {
         dvdUI= new DvdUI();
         dvdUI.start();
     }
     
+    /**
+     * Method to start the Loan UI
+     */
     private static void startLoan()
     {
         loanUI= new LoanUI();
         loanUI.start();
     }
     
+    /**
+     * Method to write the shutting down message
+     */
     private static void writeEnd()
     {
         System.out.println(" The System is shutting down. ");

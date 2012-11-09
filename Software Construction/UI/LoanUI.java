@@ -20,11 +20,17 @@ public class LoanUI
         loanControler = new LoanControler();
     }
     
+    /**
+     * Method to start the Loan Menu
+     */
     public static void start()
     {
         loanMenu();
     }
     
+    /**
+     * Method for the options in the menu list
+     */
     public static void loanMenu()
     {
         boolean exit = false;
@@ -165,7 +171,9 @@ public class LoanUI
     }
     }
     
-    
+    /**
+     * Method to print the Loan menu options
+     */
     public static int writeLoanMenu()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -183,7 +191,10 @@ public class LoanUI
         int choise = keyboard.nextInt();
         return choise;
     }
-
+    
+    /**
+     * Method for the persons id
+     */
     public static int inputPersonsID()
     {   
         boolean ok = false;
@@ -205,7 +216,10 @@ public class LoanUI
         }
         return id;
     }
-
+    
+    /**
+     * Method for the persons name
+     */
     public static String inputName()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -215,6 +229,9 @@ public class LoanUI
         return name;
     }
 
+    /**
+     * Method for the persons postal code
+     */
     public static int inputPostalCode()
     {
         boolean ok = false;
@@ -237,6 +254,9 @@ public class LoanUI
         return postalCode;
     }
 
+    /**
+     * Method for the persons city
+     */
     public static String inputCity()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -246,6 +266,9 @@ public class LoanUI
         return city;
     } 
 
+    /**
+     * Method for the persons phone number
+     */
     public static String inputPhone()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -255,6 +278,9 @@ public class LoanUI
         return phone;
     } 
 
+    /**
+     * Method for the persons address
+     */
     public static String inputAddress()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -264,6 +290,9 @@ public class LoanUI
         return address;
     }
     
+    /**
+     * Method for the dvd id
+     */
     public static int inputDvdID()
     {   
         boolean ok = false;
@@ -286,6 +315,9 @@ public class LoanUI
         return id;
     }
     
+    /**
+     * Method for the id of a copy
+     */
     public static int inputCopyID()
     {   
         boolean ok = false;
@@ -308,6 +340,9 @@ public class LoanUI
         return copyId;
     }
     
+    /**
+     * Method for the copy serial number
+     */
     public static int inputSerialNumber()
     {   
         boolean ok = false;
@@ -330,6 +365,9 @@ public class LoanUI
         return serialNumber;
     }
     
+    /**
+     * Method for the loan period
+     */
     public static int inputPeriod()
     {   
         boolean ok = false;
@@ -338,7 +376,7 @@ public class LoanUI
         {
             Scanner keyboard = new Scanner(System.in);
             System.out.println();
-            System.out.println(" Write the Period for loan:  ");
+            System.out.println(" Write the Period for loan in days:  ");
             try{
                 period = keyboard.nextInt();
                 ok = true;
@@ -352,6 +390,9 @@ public class LoanUI
         return period;
     }
     
+    /**
+     * Method for the copy purchase date
+     */
     public static String inputPurchaseDate()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -361,6 +402,9 @@ public class LoanUI
         return purchaseDate;
     }
     
+    /**
+     * Method for the purchase price
+     */
     public static double inputPurchasePrice()
     {   
         boolean ok = false;
@@ -383,6 +427,9 @@ public class LoanUI
         return purchasePrice;
     }
     
+    /**
+     * Method for the dvd title
+     */
         public static String inputTitle()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -392,6 +439,9 @@ public class LoanUI
         return title;
     }
     
+    /**
+     * Method for the dvd artist
+     */
         public static String inputArtist()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -401,6 +451,9 @@ public class LoanUI
         return artist;
     }
     
+    /**
+     * Method for the dvd publication date
+     */
     public static String inputPublicationDate()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -410,6 +463,9 @@ public class LoanUI
         return publicationDate;
     }
     
+    /**
+     * Method to create a new person
+     */
     private static void createPerson()
     {
         int id = inputPersonsID();
@@ -421,6 +477,9 @@ public class LoanUI
         loanControler.createPerson(id, name, address, postalCode, city, phone);
     }
     
+    /**
+     * Method to create a new dvd
+     */
     private static void createDVD()
     {
         int id = inputDvdID();
@@ -430,6 +489,9 @@ public class LoanUI
         loanControler.createDVD(id, title, artist, publicationDate);
     }
     
+    /**
+     * Method to create a new copy
+     */
     private static void createCopy()
     {
         int id = inputDvdID();
@@ -440,6 +502,9 @@ public class LoanUI
         loanControler.createCopy(id, serialNumber, purchaseDate, purchasePrice, period);
     }
     
+    /**
+     * Method to create a new loan
+     */
     private static void makeLoan()
     {
         int personId = inputPersonsID();
@@ -448,6 +513,9 @@ public class LoanUI
         loanControler.makeLoan(personId, dvdId, serialNumber);
     }
     
+    /**
+     * Method for returning a loaned copy
+     */
     private static void returnCopy()
     {
         int personId = inputPersonsID();
@@ -457,6 +525,9 @@ public class LoanUI
         loanControler.returnCopy(personId, dvdId, serialNumber, purchaseDate);
     }
     
+    /**
+     * Method for extending the loan period
+     */
     private static void expandPeriod()
     {
         int personId = inputPersonsID();
@@ -465,12 +536,18 @@ public class LoanUI
         loanControler.extendPeriod(personId, serialNumber, period);
     }
     
+    /**
+     * Method for printing a loan with the id of a person
+     */
     private static void printLoanenDvd()
     {
         int personId = inputPersonsID();
         loanControler.printLoanenDvd(personId);
     }
     
+    /**
+     * Method to print the list with all persons that have loaned dvd's
+     */
     private static void printAll()
     {
         loanControler.printPersonsWithDvds();

@@ -21,11 +21,17 @@ public class AddressBookUI
         personController = new PersonControler();
     }
     
+    /**
+     * Method to start the Address Book Menu
+     */
     public static void start()
     {
         addressMenu();
     }
     
+    /**
+     * Method for the options in the Address Book Menu
+     */
     public static void addressMenu()
     {
         boolean exit=false;
@@ -111,6 +117,9 @@ public class AddressBookUI
     }
     }
     
+    /**
+     * Method to print the options of the Address Book Menu
+     */
     public static int writeAddressBookMenu()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -126,12 +135,18 @@ public class AddressBookUI
         return choise;
     }
     
+    /**
+     * Method to start the Person Update Menu UI
+     */
     private static void startPersonUpdate()
     {
         personUI = new PersonUpdateUI();
         personUI.start();
     }
     
+    /**
+     * Method for the persons id
+     */
     public static int inputPersonsID()
     {   
         boolean ok = false;
@@ -154,6 +169,9 @@ public class AddressBookUI
         return id;
     }
 
+    /**
+     * Method for the persons name
+     */
     public static String inputName()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -163,6 +181,9 @@ public class AddressBookUI
         return name;
     }
 
+    /**
+     * Method for the persons postal code
+     */
     public static int inputPostalCode()
     {
         boolean ok = false;
@@ -185,6 +206,9 @@ public class AddressBookUI
         return postalCode;
     }
 
+    /**
+     * Method for the persons city
+     */
     public static String inputCity()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -194,6 +218,9 @@ public class AddressBookUI
         return city;
     } 
 
+    /**
+     * Method for the persons phone number
+     */
     public static String inputPhone()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -203,6 +230,9 @@ public class AddressBookUI
         return phone;
     } 
 
+    /**
+     * Method for the persons address
+     */
     public static String inputAddress()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -212,12 +242,18 @@ public class AddressBookUI
         return address;
     }
 
+    /**
+     * Method to get a person by the id
+     */
     private static void getPerson()
     {
         int searchId = inputPersonsID();
         personController.print(searchId);
     }
     
+    /**
+     * Method to create a new person
+     */
     private static void createPerson()
     {
         int id = inputPersonsID();
@@ -229,12 +265,18 @@ public class AddressBookUI
         personController.createPerson(id, name, address, postalCode, city, phone);
     }
 
+    /**
+     * Method to remove a person
+     */
     private static void removePerson()
     {
         int searchId = inputPersonsID();
         personController.removePerson(searchId);
     }
     
+    /**
+     * Method to list all the persons
+     */
     private static void listPersons()
     {
         personController.printAll();

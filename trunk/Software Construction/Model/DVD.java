@@ -2,10 +2,8 @@ package Model;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DVD here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A class of DVD that consists of attrubutes 
+ * connected with the DVD requirements.
  */
 public class DVD
 {
@@ -30,6 +28,10 @@ public class DVD
         copies = new ArrayList<Copy>();
     }
     
+    /**
+     * Creates a static instance.
+     */
+    
     public static DVD getInstance(int id,String title,String artist,String publicationDate)
     {
         
@@ -40,50 +42,90 @@ public class DVD
         return instance;
     }
     
+    /**
+     * Sets ID [for the DVD.
+     */
+    
     public void setId(int id)
     {
         this.id = id;
     }
+    
+    /**
+     * Returns the id of the DVD.
+     */
     
     public int getId()
     {
         return id;
     }
     
+    /**
+     * Sets a title to the DVD.
+     */
+    
     public void title(String title)
     {
         this.title = title;
     }
+    
+    /**
+     * Returns the title of DVD.
+     */
     
     public String getTitle()
     {
         return title;
     }
     
+    /**
+     * Sets name of an artist.
+     */
+    
     public void setArtist(String artist)
     {
         this.artist = artist;
     }
+    
+    /**
+     * Returns the artists of the DVD.
+     */
     
     public String getArtist()
     {
         return artist;
     }
     
+    /**
+     * Sets publication date.
+     */
+    
     public void setPublicationDate(String publicationDate)
     {
         this.publicationDate = publicationDate;
     }
+    
+    /**
+     * returns the publication date.
+     */
     
     public String getPublicationDate()
     {
         return publicationDate;
     }
     
+    /**
+     * Adds copy from class Copy.
+     */
+    
     public void addCopy(Copy newCopy)
     {
         copies.add(newCopy);
     }
+    
+    /**
+     * Removes DVD copy form a DVD object.
+     */
     
     public void removeDVDcopy(int serialNumber)
     {
@@ -91,6 +133,10 @@ public class DVD
         copies.remove(copy);
     }
     
+    /**
+     * Checks for copy and returns it, or gives null if 
+     * a copy does not exist.
+     */
     
     
     public Copy getCopy(int id)
@@ -119,6 +165,9 @@ public class DVD
         }
     }
     
+    /**
+     * Creates a new copy.
+     */
     
     public void createCopy(int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
@@ -130,6 +179,10 @@ public class DVD
         addCopy(copy);
              } 
     }
+    
+    /**
+     * Checks for availability of a copy.
+     */
     
     
     public boolean getCopyAvability(int SerialNumber)
@@ -143,6 +196,10 @@ public class DVD
         return x;
     }
     
+    /**
+     * Checks Id.
+     */
+    
         public boolean checkId(int id)
     {
      
@@ -155,6 +212,11 @@ public class DVD
         return true;
     }
     
+    /**
+     * Prints information about the copy by
+     * first inserting the id of it.
+     */
+    
     public void printCopy(int id)
     {
         for(Copy copy: copies)
@@ -165,6 +227,10 @@ public class DVD
             }
         }
     }
+    
+    /**
+     * Prints all copies of a DVD.
+     */
     
     public void printCopy()
     {
@@ -177,6 +243,10 @@ public class DVD
         }
     }
     
+    /**
+     * Changes the availability of the copy.
+     */
+    
     public void changeCopyAvability(int serialNumber)
     {
         for(Copy copy: copies)
@@ -188,6 +258,10 @@ public class DVD
         }
     }
     
+    /**
+     * Extends the period of lending.
+     */
+    
     public void extendPeriod(int serialNumber,int addDays)
     {
         for(Copy copy: copies)
@@ -198,9 +272,11 @@ public class DVD
             }
         }
     }
-            
     
-    
+    /**
+     * Prints information about about the DVD and
+     * numbers of copies.
+     */    
     public void print()
     {   
         int copiesNo = copies.size();

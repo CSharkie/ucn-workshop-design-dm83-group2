@@ -1,11 +1,10 @@
 package Model;
 import java.util.ArrayList;
+
 /**
- * Write a description of class Person here.
- * 
- * @author 
- * @version 
+ *A class for crating Person objects.
  */
+
 public class Person
 {
     private int id;
@@ -31,66 +30,112 @@ public class Person
         loanDVDs = new ArrayList<Copy>();
     }
     
+    /**
+     * Returns the person's id.
+     */
     
     public int getId()
     {
         return id;
     }
     
+    /**
+     * Returns the name of a person.
+     */
+    
     public String getName()
     {
         return name;
     }
+    
+    /**
+     * Returns the address of a person.
+     */
     
     public String getAddress()
     {
         return address;
     }
     
+    /**
+     * Returns the postal code.
+     */
+    
     public int getPostalCode()
     {
         return postalCode;
     }
+    
+    /**
+     * Returns information about the city.
+     */
     
     public String getCity()
     {
         return city;
     }
     
+    /**
+     * Returns information about phone number.
+     */
     public String getPhone()
     {
         return phone;
     }
+    
+    /**
+     * Sets id of a person.
+     */
     
     public void setId(int id)
     {
         this.id = id;
     }
     
+    /**
+     * Sets name of a person
+     */
     public void setName(String name)
     {
         this.name = name;
     }
     
+    /**
+     * Sets address of a person.
+     */
     public void setAddress(String address)
     {
         this.address = address;
     }
     
+    /**
+     * Sets a postal code.
+     */
     public void setPostalCode(int postalCode)
     {
         this.postalCode = postalCode;
     }
     
+    /**
+     * Sets a new city.
+     */
     public void setCity(String city)
     {
         this.city = city;
     }
     
+    /**
+     * Sets a phone number.
+     */
+    
     public void setPhone(String phone)
     {
         this.phone = phone;
     }
+    
+    /**
+     * Checks number of loans.
+     */
     
     public boolean getNumberOfLoans()
     {
@@ -99,7 +144,10 @@ public class Person
         else
         return false;
     }
-            
+     
+    /**
+     * Prints all of the information about a person.
+     */
     
      public void print()
     {
@@ -110,6 +158,10 @@ public class Person
         System.out.println("City:        " + city);
         System.out.println("Phone:       " + phone);
     }
+    
+    /**
+     * Print DVD all of the dvds that are lent.
+     */
     
     public void printLoanDvds()
     {
@@ -124,11 +176,18 @@ public class Person
         System.out.println("No dvds have been loan");
     }
     
+    /**
+     * Creates a loan. Moves the copies inside the Array List of Person.
+     */
        public void createLoanenDvd(int serialNumber, String purchaseDate,double purchasePrice,int period)
     {
         Copy copy = new Copy(serialNumber, purchaseDate, purchasePrice,true,period);
         addLoanDvd(copy);
     }
+    
+    /**
+     * Prints the dvds that are lent.
+     */
     
     public void printLoanenDvd()
     {
@@ -137,6 +196,10 @@ public class Person
                 copy.print();
         }
     }
+    
+    /**
+     * Extends the loan period.
+     */
     
     public void extendPeriod(int serialNumber,int addDays)
     {
@@ -149,6 +212,9 @@ public class Person
         }
     }
     
+    /**
+     * Returns the period of the loan.
+     */
     public int getPeriod(int serialNumber)
     {
         
@@ -161,13 +227,19 @@ public class Person
             }
             return 0;
      }
-    
-    
+     
+     /**
+      * Adds a new loan.
+      */
+        
     public void addLoanDvd(Copy newLoan)
     {
         loanDVDs.add(newLoan);
     }
     
+    /**
+     * Checks if the copy is available.
+     */
     public boolean checkLoanenCopy(int serialNumber,String purchaseDate)
     {
         boolean x = false;
@@ -178,6 +250,10 @@ public class Person
         }
         return x;
     }
+    
+    /**
+     * Removes a copy.
+     */
     
     public void removeCopy(int serialNumber,String purchaseDate)
     {
@@ -197,12 +273,15 @@ public class Person
         }
     
     }
-    
+        
     public void removeCopy(Copy copy)
     {
         loanDVDs.remove(copy);
     }
-    
+   
+    /**
+     * Checks if the person has at leat one copy rented.
+     */
     public boolean numberOfPersonDvds()
     {
         if(loanDVDs.size()>0)
